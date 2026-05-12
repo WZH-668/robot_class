@@ -1,0 +1,26 @@
+[ 50%] [32mBuilding CXX object CMakeFiles/my_base.dir/src/my_base.cpp.o[0m
+In file included from [01m[K/home/pi/Desktop/robot_move/my_base_learn/src/my_base/src/my_base.cpp:1[m[K:
+[01m[K/home/pi/Desktop/robot_move/my_base_learn/src/my_base/src/bot_serial.h:[m[K In member function ‘[01m[Kbool turn_on_robot::[01;32m[KGet_Sensor_Data_New[m[K()[m[K’:
+[01m[K/home/pi/Desktop/robot_move/my_base_learn/src/my_base/src/bot_serial.h:138:20:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kerror[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+  138 |   uint8_t check=0, [01;35m[Kerror[m[K=1;
+      |                    [01;35m[K^~~~~[m[K
+[100%] [32m[1mLinking CXX executable my_base[0m
+[100%] Built target my_base
+-- Install configuration: ""
+-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/lib/my_base/my_base
+-- Set non-toolchain portion of runtime path of "/home/pi/Desktop/robot_move/my_base_learn/install/my_base/lib/my_base/my_base" to "/usr/local/lib:/opt/ros/jazzy/lib"
+-- Up-to-date: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/ament_index/resource_index/package_run_dependencies/my_base
+-- Up-to-date: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/ament_index/resource_index/parent_prefix_path/my_base
+-- Up-to-date: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/environment/ament_prefix_path.sh
+-- Up-to-date: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/environment/ament_prefix_path.dsv
+-- Up-to-date: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/environment/path.sh
+-- Up-to-date: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/environment/path.dsv
+-- Up-to-date: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/local_setup.bash
+-- Up-to-date: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/local_setup.sh
+-- Up-to-date: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/local_setup.zsh
+-- Up-to-date: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/local_setup.dsv
+-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/package.dsv
+-- Up-to-date: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/ament_index/resource_index/packages/my_base
+-- Up-to-date: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/cmake/my_baseConfig.cmake
+-- Up-to-date: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/cmake/my_baseConfig-version.cmake
+-- Up-to-date: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/package.xml

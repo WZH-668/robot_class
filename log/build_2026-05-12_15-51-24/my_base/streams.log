@@ -1,0 +1,76 @@
+[0.029s] Invoking command in '/home/pi/Desktop/robot_move/my_base_learn/build/my_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/pi/Desktop/robot_move/my_base_learn/src/my_base -DCMAKE_INSTALL_PREFIX=/home/pi/Desktop/robot_move/my_base_learn/install/my_base
+[0.251s] -- The C compiler identification is GNU 13.3.0
+[0.408s] -- The CXX compiler identification is GNU 13.3.0
+[0.446s] -- Detecting C compiler ABI info
+[0.663s] -- Detecting C compiler ABI info - done
+[0.681s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.682s] -- Detecting C compile features
+[0.685s] -- Detecting C compile features - done
+[0.704s] -- Detecting CXX compiler ABI info
+[1.001s] -- Detecting CXX compiler ABI info - done
+[1.030s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[1.031s] -- Detecting CXX compile features
+[1.036s] -- Detecting CXX compile features - done
+[1.060s] -- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)
+[1.354s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.553s] -- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)
+[1.751s] -- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+[1.810s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[1.830s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[1.859s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.887s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.002s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[2.006s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[2.150s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[2.187s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[2.229s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.343s] -- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)
+[2.398s] -- Found tf2_geometry_msgs: 0.36.19 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)
+[2.420s] -- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)
+[2.421s] -- Found Eigen3: TRUE (found version "3.4.0") 
+[2.422s] -- Ensuring Eigen3 include directory is part of orocos-kdl CMake target
+[2.609s] -- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)
+[2.772s] -- Added test 'cppcheck' to perform static code analysis on C / C++ code
+[2.773s] -- Configured cppcheck include dirs: 
+[2.773s] -- Configured cppcheck exclude dirs and/or files: 
+[2.775s] -- Added test 'flake8' to check Python code syntax and style conventions
+[2.775s] -- Configured 'flake8' exclude dirs and/or files: 
+[2.779s] -- Added test 'lint_cmake' to check CMake code style
+[2.782s] -- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257
+[2.795s] -- Added test 'uncrustify' to check C / C++ code style
+[2.796s] -- Configured uncrustify additional arguments: 
+[2.799s] -- Added test 'xmllint' to check XML markup files
+[2.801s] -- Configuring done (2.7s)
+[2.841s] -- Generating done (0.0s)
+[2.856s] -- Build files have been written to: /home/pi/Desktop/robot_move/my_base_learn/build/my_base
+[2.887s] Invoked command in '/home/pi/Desktop/robot_move/my_base_learn/build/my_base' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/pi/Desktop/robot_move/my_base_learn/src/my_base -DCMAKE_INSTALL_PREFIX=/home/pi/Desktop/robot_move/my_base_learn/install/my_base
+[2.888s] Invoking command in '/home/pi/Desktop/robot_move/my_base_learn/build/my_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/pi/Desktop/robot_move/my_base_learn/build/my_base -- -j4 -l4
+[2.999s] [ 50%] [32mBuilding CXX object CMakeFiles/my_base.dir/src/my_base.cpp.o[0m
+[6.957s] In file included from [01m[K/home/pi/Desktop/robot_move/my_base_learn/src/my_base/src/my_base.cpp:1[m[K:
+[6.957s] [01m[K/home/pi/Desktop/robot_move/my_base_learn/src/my_base/src/bot_serial.h:[m[K In member function ‘[01m[Kbool turn_on_robot::[01;32m[KGet_Sensor_Data_New[m[K()[m[K’:
+[6.957s] [01m[K/home/pi/Desktop/robot_move/my_base_learn/src/my_base/src/bot_serial.h:138:20:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kerror[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
+[6.957s]   138 |   uint8_t check=0, [01;35m[Kerror[m[K=1;
+[6.957s]       |                    [01;35m[K^~~~~[m[K
+[18.451s] [100%] [32m[1mLinking CXX executable my_base[0m
+[19.740s] [100%] Built target my_base
+[19.771s] Invoked command in '/home/pi/Desktop/robot_move/my_base_learn/build/my_base' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/pi/Desktop/robot_move/my_base_learn/build/my_base -- -j4 -l4
+[19.794s] Invoking command in '/home/pi/Desktop/robot_move/my_base_learn/build/my_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/pi/Desktop/robot_move/my_base_learn/build/my_base
+[19.808s] -- Install configuration: ""
+[19.810s] -- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/lib/my_base/my_base
+[19.825s] -- Set non-toolchain portion of runtime path of "/home/pi/Desktop/robot_move/my_base_learn/install/my_base/lib/my_base/my_base" to ""
+[19.827s] -- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/ament_index/resource_index/package_run_dependencies/my_base
+[19.828s] -- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/ament_index/resource_index/parent_prefix_path/my_base
+[19.828s] -- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/environment/ament_prefix_path.sh
+[19.828s] -- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/environment/ament_prefix_path.dsv
+[19.828s] -- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/environment/path.sh
+[19.828s] -- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/environment/path.dsv
+[19.834s] -- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/local_setup.bash
+[19.834s] -- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/local_setup.sh
+[19.834s] -- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/local_setup.zsh
+[19.835s] -- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/local_setup.dsv
+[19.835s] -- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/package.dsv
+[19.835s] -- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/ament_index/resource_index/packages/my_base
+[19.835s] -- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/cmake/my_baseConfig.cmake
+[19.835s] -- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/cmake/my_baseConfig-version.cmake
+[19.835s] -- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/package.xml
+[19.842s] Invoked command in '/home/pi/Desktop/robot_move/my_base_learn/build/my_base' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/pi/Desktop/robot_move/my_base_learn/build/my_base

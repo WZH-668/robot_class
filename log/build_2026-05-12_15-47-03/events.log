@@ -1,0 +1,275 @@
+[0.000000] (-) TimerEvent: {}
+[0.000406] (-) JobUnselected: {'identifier': 'lidar_test'}
+[0.000763] (-) JobUnselected: {'identifier': 'lslidar_driver'}
+[0.000947] (-) JobUnselected: {'identifier': 'lslidar_msgs'}
+[0.001211] (-) JobUnselected: {'identifier': 'robot_control'}
+[0.001274] (-) JobUnselected: {'identifier': 'tbot_description'}
+[0.001327] (my_base) JobQueued: {'identifier': 'my_base', 'dependencies': OrderedDict()}
+[0.001396] (my_base) JobStarted: {'identifier': 'my_base'}
+[0.012546] (my_base) JobProgress: {'identifier': 'my_base', 'progress': 'cmake'}
+[0.013539] (my_base) Command: {'cmd': ['/usr/bin/cmake', '/home/pi/Desktop/robot_move/my_base_learn/src/my_base', '-DCMAKE_INSTALL_PREFIX=/home/pi/Desktop/robot_move/my_base_learn/install/my_base'], 'cwd': '/home/pi/Desktop/robot_move/my_base_learn/build/my_base', 'env': OrderedDict({'SERVER_SCRIPT_PRODUCT': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/product.json', 'ARCH': 'aarch64', 'SERVER_PACKAGE_NAME': 'Trae-linux-arm64-1146106025986_3.tar.gz', 'USER': 'pi', 'SSH_CLIENT': '10.16.89.17 62631 22', 'DISTRO_COMMIT': '84967093b3105381f26e13eca4ab8af60e8f40db', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/extensions/git/dist/askpass.sh', 'SERVER_LISTEN_FLAG': '--port=0', 'MANAGER_LOGS_DIR': '/home/pi/.trae-server/manager-logs/1778565327051_047007', 'SCRIPT_ID': '129e294c30e83dcf9132430e', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'BROWSER': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/bin/helpers/browser.sh', 'HOME': '/home/pi', 'OLDPWD': '/home/pi/Desktop/robot_move/my_base_learn', 'TERM_PROGRAM_VERSION': '1.107.1', 'SERVER_APP_NAME': 'Trae', 'VSCODE_IPC_HOOK_CLI': '/run/user/1002/vscode-ipc-fc304ad6-3f63-4000-8969-2899da6a7111.sock', 'OS_RELEASE_ID': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'TRAE_RESOLVE_TYPE': 'ssh', 'VSCODE_GIT_ASKPASS_MAIN': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/extensions/git/dist/askpass-main.js', 'SERVER_DOWNLOAD_PREFIX': 'https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/server/releases/stable/84967093b3105381f26e13eca4ab8af60e8f40db/linux-debian10/', 'VSCODE_GIT_ASKPASS_NODE': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/node', 'NO_USE_FETCH': '', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'SERVER_DIR': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'COLORTERM': 'truecolor', 'TRAE_JWT_TOKEN_PATH': '/home/pi/.trae/trae-jwt-token', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/pi/Desktop/robot_move/my_base_learn/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'pi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TRAE_REMOTE_SKIP_REMOTE_CHECK': '', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'DISTRO_VERSION': '1.107.1', 'XDG_SESSION_ID': '3', 'SERVER_INITIAL_EXTENSIONS': '', 'EXTRACT_RETRY_COUNT': '0', 'TRAE_DETECT_COUNTRY_CODE': '', 'AHA_RUNTIME_DIR': '/home/pi/.trae-server/socks/2067/8496709', 'vscode_base_dir': '/home/pi/.trae-server', 'PATH': '/opt/ros/jazzy/bin:/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'PLATFORM': 'linux', 'DISTRO_QUALITY': 'stable', 'XDG_RUNTIME_DIR': '/run/user/1002', 'SERVER_SCRIPT': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/index_trae.js', 'LANG': 'en_US.UTF-8', 'SERVER_PIDFILE': '/home/pi/.trae-server/.stable-84967093b3105381f26e13eca4ab8af60e8f40db-21a76510.pid', 'SERVER_LOGS_DIR': '/home/pi/.trae-server/logs', 'TRAE_BRAND_NAME': 'Trae', 'DOWNLOAD_RETRY_COUNT': '0', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1002/vscode-git-f128588436.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/pi/Desktop/robot_move/my_base_learn/install/tbot_description:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/my_base:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_driver:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'SERVER_HOST': '127.0.0.1', 'SERVER_LOGFILE': '/home/pi/.trae-server/.stable-84967093b3105381f26e13eca4ab8af60e8f40db-21a76510.log', 'TRAE_STORE_REGION': 'SG', 'DISTRO_VSCODIUM_RELEASE': '', 'TMP_DIR': '/run/user/1002', 'SERVER_TOKENFILE': '/home/pi/.trae-server/.stable-84967093b3105381f26e13eca4ab8af60e8f40db-21a76510.token', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'TRAE_REMOTE_EXTENSION_REGION': 'cn', 'SERVER_EXTENSIONS_DIR': '/home/pi/.trae-server/extensions', 'PWD': '/home/pi/Desktop/robot_move/my_base_learn/build/my_base', 'LC_ALL': 'en_US.UTF-8', 'SERVER_APP_VERSION': '', 'TERM_PRODUCT': 'Trae', 'SSH_CONNECTION': '10.16.89.17 62631 10.16.89.13 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SERVER_ARCH': 'arm64', 'PYTHONPATH': '/home/pi/Desktop/robot_move/my_base_learn/install/robot_control/lib/python3.12/site-packages:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs/lib/python3.12/site-packages:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'TRAE_DETECT_REGION': 'CN', 'COLCON': '1', 'SERVER_APP_QUALITY': 'stable', 'SERVER_DATA_DIR': '/home/pi/.trae-server', 'REMOTE_VERSION': '1146106025986_3', 'CMAKE_PREFIX_PATH': '/home/pi/Desktop/robot_move/my_base_learn/install/tbot_description:/home/pi/Desktop/robot_move/my_base_learn/install/my_base:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_driver:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy'}), 'shell': False}
+[0.099678] (-) TimerEvent: {}
+[0.142127] (my_base) StdoutLine: {'line': b'-- The C compiler identification is GNU 13.3.0\n'}
+[0.199790] (-) TimerEvent: {}
+[0.269424] (my_base) StdoutLine: {'line': b'-- The CXX compiler identification is GNU 13.3.0\n'}
+[0.299908] (-) TimerEvent: {}
+[0.306704] (my_base) StdoutLine: {'line': b'-- Detecting C compiler ABI info\n'}
+[0.400035] (-) TimerEvent: {}
+[0.491826] (my_base) StdoutLine: {'line': b'-- Detecting C compiler ABI info - done\n'}
+[0.500141] (-) TimerEvent: {}
+[0.508198] (my_base) StdoutLine: {'line': b'-- Check for working C compiler: /usr/bin/cc - skipped\n'}
+[0.508701] (my_base) StdoutLine: {'line': b'-- Detecting C compile features\n'}
+[0.509307] (my_base) StdoutLine: {'line': b'-- Detecting C compile features - done\n'}
+[0.523511] (my_base) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info\n'}
+[0.600262] (-) TimerEvent: {}
+[0.701145] (-) TimerEvent: {}
+[0.733631] (my_base) StdoutLine: {'line': b'-- Detecting CXX compiler ABI info - done\n'}
+[0.751088] (my_base) StdoutLine: {'line': b'-- Check for working CXX compiler: /usr/bin/c++ - skipped\n'}
+[0.751872] (my_base) StdoutLine: {'line': b'-- Detecting CXX compile features\n'}
+[0.752378] (my_base) StdoutLine: {'line': b'-- Detecting CXX compile features - done\n'}
+[0.756206] (my_base) StdoutLine: {'line': b'-- Found ament_cmake: 2.5.5 (/opt/ros/jazzy/share/ament_cmake/cmake)\n'}
+[0.801235] (-) TimerEvent: {}
+[0.901670] (-) TimerEvent: {}
+[0.999604] (my_base) StdoutLine: {'line': b'-- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter \n'}
+[1.001781] (-) TimerEvent: {}
+[1.102333] (-) TimerEvent: {}
+[1.193812] (my_base) StdoutLine: {'line': b'-- Found ament_lint_auto: 0.17.4 (/opt/ros/jazzy/share/ament_lint_auto/cmake)\n'}
+[1.202522] (-) TimerEvent: {}
+[1.303066] (-) TimerEvent: {}
+[1.385996] (my_base) StdoutLine: {'line': b'-- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)\n'}
+[1.403184] (-) TimerEvent: {}
+[1.443472] (my_base) StdoutLine: {'line': b'-- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)\n'}
+[1.465112] (my_base) StdoutLine: {'line': b'-- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)\n'}
+[1.489703] (my_base) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c\n'}
+[1.503301] (-) TimerEvent: {}
+[1.519716] (my_base) StdoutLine: {'line': b'-- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp\n'}
+[1.603406] (-) TimerEvent: {}
+[1.626643] (my_base) StdoutLine: {'line': b'-- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)\n'}
+[1.630659] (my_base) StdoutLine: {'line': b'-- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)\n'}
+[1.703522] (-) TimerEvent: {}
+[1.757135] (my_base) StdoutLine: {'line': b'-- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  \n'}
+[1.788286] (my_base) StdoutLine: {'line': b'-- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") \n'}
+[1.803632] (-) TimerEvent: {}
+[1.827428] (my_base) StdoutLine: {'line': b"-- Using RMW implementation 'rmw_fastrtps_cpp' as default\n"}
+[1.903737] (-) TimerEvent: {}
+[1.927761] (my_base) StdoutLine: {'line': b'-- Found geometry_msgs: 5.3.6 (/opt/ros/jazzy/share/geometry_msgs/cmake)\n'}
+[1.976511] (my_base) StdoutLine: {'line': b'-- Found tf2_geometry_msgs: 0.36.19 (/opt/ros/jazzy/share/tf2_geometry_msgs/cmake)\n'}
+[1.997855] (my_base) StdoutLine: {'line': b'-- Found eigen3_cmake_module: 0.3.0 (/opt/ros/jazzy/share/eigen3_cmake_module/cmake)\n'}
+[2.000069] (my_base) StdoutLine: {'line': b'-- Found Eigen3: TRUE (found version "3.4.0") \n'}
+[2.000403] (my_base) StdoutLine: {'line': b'-- Ensuring Eigen3 include directory is part of orocos-kdl CMake target\n'}
+[2.003859] (-) TimerEvent: {}
+[2.104412] (-) TimerEvent: {}
+[2.183416] (my_base) StdoutLine: {'line': b'-- Found serial: 1.2.1 (/usr/local/share/serial/cmake)\n'}
+[2.188120] (my_base) StdoutLine: {'line': b'-- Found nav_msgs: 5.3.6 (/opt/ros/jazzy/share/nav_msgs/cmake)\n'}
+[2.204518] (-) TimerEvent: {}
+[2.240545] (my_base) StdoutLine: {'line': b"-- Added test 'cppcheck' to perform static code analysis on C / C++ code\n"}
+[2.240950] (my_base) StdoutLine: {'line': b'-- Configured cppcheck include dirs: \n'}
+[2.241102] (my_base) StdoutLine: {'line': b'-- Configured cppcheck exclude dirs and/or files: \n'}
+[2.243682] (my_base) StdoutLine: {'line': b"-- Added test 'flake8' to check Python code syntax and style conventions\n"}
+[2.244002] (my_base) StdoutLine: {'line': b"-- Configured 'flake8' exclude dirs and/or files: \n"}
+[2.248364] (my_base) StdoutLine: {'line': b"-- Added test 'lint_cmake' to check CMake code style\n"}
+[2.251215] (my_base) StdoutLine: {'line': b"-- Added test 'pep257' to check Python code against some of the docstring style conventions in PEP 257\n"}
+[2.264646] (my_base) StdoutLine: {'line': b"-- Added test 'uncrustify' to check C / C++ code style\n"}
+[2.265187] (my_base) StdoutLine: {'line': b'-- Configured uncrustify additional arguments: \n'}
+[2.267521] (my_base) StdoutLine: {'line': b"-- Added test 'xmllint' to check XML markup files\n"}
+[2.270820] (my_base) StdoutLine: {'line': b'-- Configuring done (2.2s)\n'}
+[2.302613] (my_base) StdoutLine: {'line': b'-- Generating done (0.0s)\n'}
+[2.305407] (-) TimerEvent: {}
+[2.335643] (my_base) StdoutLine: {'line': b'-- Build files have been written to: /home/pi/Desktop/robot_move/my_base_learn/build/my_base\n'}
+[2.359432] (my_base) CommandEnded: {'returncode': 0}
+[2.362139] (my_base) JobProgress: {'identifier': 'my_base', 'progress': 'build'}
+[2.362226] (my_base) Command: {'cmd': ['/usr/bin/cmake', '--build', '/home/pi/Desktop/robot_move/my_base_learn/build/my_base', '--', '-j4', '-l4'], 'cwd': '/home/pi/Desktop/robot_move/my_base_learn/build/my_base', 'env': OrderedDict({'SERVER_SCRIPT_PRODUCT': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/product.json', 'ARCH': 'aarch64', 'SERVER_PACKAGE_NAME': 'Trae-linux-arm64-1146106025986_3.tar.gz', 'USER': 'pi', 'SSH_CLIENT': '10.16.89.17 62631 22', 'DISTRO_COMMIT': '84967093b3105381f26e13eca4ab8af60e8f40db', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/extensions/git/dist/askpass.sh', 'SERVER_LISTEN_FLAG': '--port=0', 'MANAGER_LOGS_DIR': '/home/pi/.trae-server/manager-logs/1778565327051_047007', 'SCRIPT_ID': '129e294c30e83dcf9132430e', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'BROWSER': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/bin/helpers/browser.sh', 'HOME': '/home/pi', 'OLDPWD': '/home/pi/Desktop/robot_move/my_base_learn', 'TERM_PROGRAM_VERSION': '1.107.1', 'SERVER_APP_NAME': 'Trae', 'VSCODE_IPC_HOOK_CLI': '/run/user/1002/vscode-ipc-fc304ad6-3f63-4000-8969-2899da6a7111.sock', 'OS_RELEASE_ID': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'TRAE_RESOLVE_TYPE': 'ssh', 'VSCODE_GIT_ASKPASS_MAIN': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/extensions/git/dist/askpass-main.js', 'SERVER_DOWNLOAD_PREFIX': 'https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/server/releases/stable/84967093b3105381f26e13eca4ab8af60e8f40db/linux-debian10/', 'VSCODE_GIT_ASKPASS_NODE': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/node', 'NO_USE_FETCH': '', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'SERVER_DIR': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'COLORTERM': 'truecolor', 'TRAE_JWT_TOKEN_PATH': '/home/pi/.trae/trae-jwt-token', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/pi/Desktop/robot_move/my_base_learn/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'pi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TRAE_REMOTE_SKIP_REMOTE_CHECK': '', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'DISTRO_VERSION': '1.107.1', 'XDG_SESSION_ID': '3', 'SERVER_INITIAL_EXTENSIONS': '', 'EXTRACT_RETRY_COUNT': '0', 'TRAE_DETECT_COUNTRY_CODE': '', 'AHA_RUNTIME_DIR': '/home/pi/.trae-server/socks/2067/8496709', 'vscode_base_dir': '/home/pi/.trae-server', 'PATH': '/opt/ros/jazzy/bin:/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'PLATFORM': 'linux', 'DISTRO_QUALITY': 'stable', 'XDG_RUNTIME_DIR': '/run/user/1002', 'SERVER_SCRIPT': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/index_trae.js', 'LANG': 'en_US.UTF-8', 'SERVER_PIDFILE': '/home/pi/.trae-server/.stable-84967093b3105381f26e13eca4ab8af60e8f40db-21a76510.pid', 'SERVER_LOGS_DIR': '/home/pi/.trae-server/logs', 'TRAE_BRAND_NAME': 'Trae', 'DOWNLOAD_RETRY_COUNT': '0', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1002/vscode-git-f128588436.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/pi/Desktop/robot_move/my_base_learn/install/tbot_description:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/my_base:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_driver:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'SERVER_HOST': '127.0.0.1', 'SERVER_LOGFILE': '/home/pi/.trae-server/.stable-84967093b3105381f26e13eca4ab8af60e8f40db-21a76510.log', 'TRAE_STORE_REGION': 'SG', 'DISTRO_VSCODIUM_RELEASE': '', 'TMP_DIR': '/run/user/1002', 'SERVER_TOKENFILE': '/home/pi/.trae-server/.stable-84967093b3105381f26e13eca4ab8af60e8f40db-21a76510.token', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'TRAE_REMOTE_EXTENSION_REGION': 'cn', 'SERVER_EXTENSIONS_DIR': '/home/pi/.trae-server/extensions', 'PWD': '/home/pi/Desktop/robot_move/my_base_learn/build/my_base', 'LC_ALL': 'en_US.UTF-8', 'SERVER_APP_VERSION': '', 'TERM_PRODUCT': 'Trae', 'SSH_CONNECTION': '10.16.89.17 62631 10.16.89.13 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SERVER_ARCH': 'arm64', 'PYTHONPATH': '/home/pi/Desktop/robot_move/my_base_learn/install/robot_control/lib/python3.12/site-packages:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs/lib/python3.12/site-packages:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'TRAE_DETECT_REGION': 'CN', 'COLCON': '1', 'SERVER_APP_QUALITY': 'stable', 'SERVER_DATA_DIR': '/home/pi/.trae-server', 'REMOTE_VERSION': '1146106025986_3', 'CMAKE_PREFIX_PATH': '/home/pi/Desktop/robot_move/my_base_learn/install/tbot_description:/home/pi/Desktop/robot_move/my_base_learn/install/my_base:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_driver:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy'}), 'shell': False}
+[2.405528] (-) TimerEvent: {}
+[2.458873] (my_base) StdoutLine: {'line': b'[ 50%] \x1b[32mBuilding CXX object CMakeFiles/my_base.dir/src/my_base.cpp.o\x1b[0m\n'}
+[2.505653] (-) TimerEvent: {}
+[2.606021] (-) TimerEvent: {}
+[2.706926] (-) TimerEvent: {}
+[2.807663] (-) TimerEvent: {}
+[2.910855] (-) TimerEvent: {}
+[3.011249] (-) TimerEvent: {}
+[3.111775] (-) TimerEvent: {}
+[3.212365] (-) TimerEvent: {}
+[3.312771] (-) TimerEvent: {}
+[3.413152] (-) TimerEvent: {}
+[3.513539] (-) TimerEvent: {}
+[3.613923] (-) TimerEvent: {}
+[3.714344] (-) TimerEvent: {}
+[3.814802] (-) TimerEvent: {}
+[3.915217] (-) TimerEvent: {}
+[4.015656] (-) TimerEvent: {}
+[4.116061] (-) TimerEvent: {}
+[4.216481] (-) TimerEvent: {}
+[4.316860] (-) TimerEvent: {}
+[4.417309] (-) TimerEvent: {}
+[4.518240] (-) TimerEvent: {}
+[4.618787] (-) TimerEvent: {}
+[4.719223] (-) TimerEvent: {}
+[4.819654] (-) TimerEvent: {}
+[4.920101] (-) TimerEvent: {}
+[5.020518] (-) TimerEvent: {}
+[5.120954] (-) TimerEvent: {}
+[5.221433] (-) TimerEvent: {}
+[5.321842] (-) TimerEvent: {}
+[5.422343] (-) TimerEvent: {}
+[5.522768] (-) TimerEvent: {}
+[5.623296] (-) TimerEvent: {}
+[5.723692] (-) TimerEvent: {}
+[5.824364] (-) TimerEvent: {}
+[5.924771] (-) TimerEvent: {}
+[6.025169] (-) TimerEvent: {}
+[6.125599] (-) TimerEvent: {}
+[6.226276] (-) TimerEvent: {}
+[6.327783] (-) TimerEvent: {}
+[6.356223] (my_base) StderrLine: {'line': b'In file included from \x1b[01m\x1b[K/home/pi/Desktop/robot_move/my_base_learn/src/my_base/src/my_base.cpp:1\x1b[m\x1b[K:\n'}
+[6.356657] (my_base) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pi/Desktop/robot_move/my_base_learn/src/my_base/src/bot_serial.h:\x1b[m\x1b[K In member function \xe2\x80\x98\x1b[01m\x1b[Kbool turn_on_robot::\x1b[01;32m\x1b[KGet_Sensor_Data_New\x1b[m\x1b[K()\x1b[m\x1b[K\xe2\x80\x99:\n'}
+[6.356825] (my_base) StderrLine: {'line': b'\x1b[01m\x1b[K/home/pi/Desktop/robot_move/my_base_learn/src/my_base/src/bot_serial.h:138:20:\x1b[m\x1b[K \x1b[01;35m\x1b[Kwarning: \x1b[m\x1b[Kunused variable \xe2\x80\x98\x1b[01m\x1b[Kerror\x1b[m\x1b[K\xe2\x80\x99 [\x1b[01;35m\x1b[K\x1b]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable\x07-Wunused-variable\x1b]8;;\x07\x1b[m\x1b[K]\n'}
+[6.356987] (my_base) StderrLine: {'line': b'  138 |   uint8_t check=0, \x1b[01;35m\x1b[Kerror\x1b[m\x1b[K=1;\n'}
+[6.357135] (my_base) StderrLine: {'line': b'      |                    \x1b[01;35m\x1b[K^~~~~\x1b[m\x1b[K\n'}
+[6.428155] (-) TimerEvent: {}
+[6.528609] (-) TimerEvent: {}
+[6.629029] (-) TimerEvent: {}
+[6.729424] (-) TimerEvent: {}
+[6.829838] (-) TimerEvent: {}
+[6.930235] (-) TimerEvent: {}
+[7.030726] (-) TimerEvent: {}
+[7.131111] (-) TimerEvent: {}
+[7.231512] (-) TimerEvent: {}
+[7.331914] (-) TimerEvent: {}
+[7.432302] (-) TimerEvent: {}
+[7.532697] (-) TimerEvent: {}
+[7.642345] (-) TimerEvent: {}
+[7.742790] (-) TimerEvent: {}
+[7.843170] (-) TimerEvent: {}
+[7.943889] (-) TimerEvent: {}
+[8.044294] (-) TimerEvent: {}
+[8.144924] (-) TimerEvent: {}
+[8.245322] (-) TimerEvent: {}
+[8.345886] (-) TimerEvent: {}
+[8.446305] (-) TimerEvent: {}
+[8.546772] (-) TimerEvent: {}
+[8.647168] (-) TimerEvent: {}
+[8.747602] (-) TimerEvent: {}
+[8.847990] (-) TimerEvent: {}
+[8.948400] (-) TimerEvent: {}
+[9.048838] (-) TimerEvent: {}
+[9.149410] (-) TimerEvent: {}
+[9.250536] (-) TimerEvent: {}
+[9.351056] (-) TimerEvent: {}
+[9.451495] (-) TimerEvent: {}
+[9.552061] (-) TimerEvent: {}
+[9.652740] (-) TimerEvent: {}
+[9.753897] (-) TimerEvent: {}
+[9.854295] (-) TimerEvent: {}
+[9.954716] (-) TimerEvent: {}
+[10.055209] (-) TimerEvent: {}
+[10.155667] (-) TimerEvent: {}
+[10.256122] (-) TimerEvent: {}
+[10.356688] (-) TimerEvent: {}
+[10.458117] (-) TimerEvent: {}
+[10.558705] (-) TimerEvent: {}
+[10.659114] (-) TimerEvent: {}
+[10.759538] (-) TimerEvent: {}
+[10.859932] (-) TimerEvent: {}
+[10.960335] (-) TimerEvent: {}
+[11.060746] (-) TimerEvent: {}
+[11.161172] (-) TimerEvent: {}
+[11.261601] (-) TimerEvent: {}
+[11.362083] (-) TimerEvent: {}
+[11.463644] (-) TimerEvent: {}
+[11.564518] (-) TimerEvent: {}
+[11.664943] (-) TimerEvent: {}
+[11.765525] (-) TimerEvent: {}
+[11.866316] (-) TimerEvent: {}
+[11.966736] (-) TimerEvent: {}
+[12.067139] (-) TimerEvent: {}
+[12.167547] (-) TimerEvent: {}
+[12.268047] (-) TimerEvent: {}
+[12.368465] (-) TimerEvent: {}
+[12.468854] (-) TimerEvent: {}
+[12.569239] (-) TimerEvent: {}
+[12.669672] (-) TimerEvent: {}
+[12.770087] (-) TimerEvent: {}
+[12.870693] (-) TimerEvent: {}
+[12.971315] (-) TimerEvent: {}
+[13.073064] (-) TimerEvent: {}
+[13.173659] (-) TimerEvent: {}
+[13.274386] (-) TimerEvent: {}
+[13.374786] (-) TimerEvent: {}
+[13.475165] (-) TimerEvent: {}
+[13.575575] (-) TimerEvent: {}
+[13.675966] (-) TimerEvent: {}
+[13.776355] (-) TimerEvent: {}
+[13.876765] (-) TimerEvent: {}
+[13.977183] (-) TimerEvent: {}
+[14.077572] (-) TimerEvent: {}
+[14.177967] (-) TimerEvent: {}
+[14.278339] (-) TimerEvent: {}
+[14.378743] (-) TimerEvent: {}
+[14.479111] (-) TimerEvent: {}
+[14.579612] (-) TimerEvent: {}
+[14.680058] (-) TimerEvent: {}
+[14.780531] (-) TimerEvent: {}
+[14.880951] (-) TimerEvent: {}
+[14.981605] (-) TimerEvent: {}
+[15.082004] (-) TimerEvent: {}
+[15.182396] (-) TimerEvent: {}
+[15.282990] (-) TimerEvent: {}
+[15.383347] (-) TimerEvent: {}
+[15.483752] (-) TimerEvent: {}
+[15.584151] (-) TimerEvent: {}
+[15.684551] (-) TimerEvent: {}
+[15.784975] (-) TimerEvent: {}
+[15.885400] (-) TimerEvent: {}
+[15.985828] (-) TimerEvent: {}
+[16.086235] (-) TimerEvent: {}
+[16.186608] (-) TimerEvent: {}
+[16.287070] (-) TimerEvent: {}
+[16.387521] (-) TimerEvent: {}
+[16.487959] (-) TimerEvent: {}
+[16.588417] (-) TimerEvent: {}
+[16.689475] (-) TimerEvent: {}
+[16.789921] (-) TimerEvent: {}
+[16.890356] (-) TimerEvent: {}
+[16.991147] (-) TimerEvent: {}
+[17.092158] (-) TimerEvent: {}
+[17.192785] (-) TimerEvent: {}
+[17.293495] (-) TimerEvent: {}
+[17.393836] (-) TimerEvent: {}
+[17.396272] (my_base) StdoutLine: {'line': b'[100%] \x1b[32m\x1b[1mLinking CXX executable my_base\x1b[0m\n'}
+[17.493986] (-) TimerEvent: {}
+[17.594614] (-) TimerEvent: {}
+[17.695247] (-) TimerEvent: {}
+[17.796330] (-) TimerEvent: {}
+[17.897345] (-) TimerEvent: {}
+[17.997977] (-) TimerEvent: {}
+[18.098680] (-) TimerEvent: {}
+[18.199130] (-) TimerEvent: {}
+[18.299531] (-) TimerEvent: {}
+[18.399906] (-) TimerEvent: {}
+[18.500246] (-) TimerEvent: {}
+[18.512798] (my_base) StdoutLine: {'line': b'[100%] Built target my_base\n'}
+[18.541707] (my_base) CommandEnded: {'returncode': 0}
+[18.543002] (my_base) JobProgress: {'identifier': 'my_base', 'progress': 'install'}
+[18.561787] (my_base) Command: {'cmd': ['/usr/bin/cmake', '--install', '/home/pi/Desktop/robot_move/my_base_learn/build/my_base'], 'cwd': '/home/pi/Desktop/robot_move/my_base_learn/build/my_base', 'env': OrderedDict({'SERVER_SCRIPT_PRODUCT': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/product.json', 'ARCH': 'aarch64', 'SERVER_PACKAGE_NAME': 'Trae-linux-arm64-1146106025986_3.tar.gz', 'USER': 'pi', 'SSH_CLIENT': '10.16.89.17 62631 22', 'DISTRO_COMMIT': '84967093b3105381f26e13eca4ab8af60e8f40db', 'XDG_SESSION_TYPE': 'tty', 'GIT_ASKPASS': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/extensions/git/dist/askpass.sh', 'SERVER_LISTEN_FLAG': '--port=0', 'MANAGER_LOGS_DIR': '/home/pi/.trae-server/manager-logs/1778565327051_047007', 'SCRIPT_ID': '129e294c30e83dcf9132430e', 'SHLVL': '2', 'LD_LIBRARY_PATH': '/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/aarch64-linux-gnu:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'BROWSER': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/bin/helpers/browser.sh', 'HOME': '/home/pi', 'OLDPWD': '/home/pi/Desktop/robot_move/my_base_learn', 'TERM_PROGRAM_VERSION': '1.107.1', 'SERVER_APP_NAME': 'Trae', 'VSCODE_IPC_HOOK_CLI': '/run/user/1002/vscode-ipc-fc304ad6-3f63-4000-8969-2899da6a7111.sock', 'OS_RELEASE_ID': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'TRAE_RESOLVE_TYPE': 'ssh', 'VSCODE_GIT_ASKPASS_MAIN': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/extensions/git/dist/askpass-main.js', 'SERVER_DOWNLOAD_PREFIX': 'https://lf-cdn.trae.com.cn/obj/trae-com-cn/pkg/server/releases/stable/84967093b3105381f26e13eca4ab8af60e8f40db/linux-debian10/', 'VSCODE_GIT_ASKPASS_NODE': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/node', 'NO_USE_FETCH': '', 'VSCODE_PYTHON_AUTOACTIVATE_GUARD': '1', 'SERVER_DIR': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1002/bus', 'COLORTERM': 'truecolor', 'TRAE_JWT_TOKEN_PATH': '/home/pi/.trae/trae-jwt-token', 'DEBUGINFOD_URLS': 'https://debuginfod.ubuntu.com', 'COLCON_PREFIX_PATH': '/home/pi/Desktop/robot_move/my_base_learn/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'pi', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'TRAE_REMOTE_SKIP_REMOTE_CHECK': '', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'DISTRO_VERSION': '1.107.1', 'XDG_SESSION_ID': '3', 'SERVER_INITIAL_EXTENSIONS': '', 'EXTRACT_RETRY_COUNT': '0', 'TRAE_DETECT_COUNTRY_CODE': '', 'AHA_RUNTIME_DIR': '/home/pi/.trae-server/socks/2067/8496709', 'vscode_base_dir': '/home/pi/.trae-server', 'PATH': '/opt/ros/jazzy/bin:/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/bin/remote-cli:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'PLATFORM': 'linux', 'DISTRO_QUALITY': 'stable', 'XDG_RUNTIME_DIR': '/run/user/1002', 'SERVER_SCRIPT': '/home/pi/.trae-server/bin/stable-84967093b3105381f26e13eca4ab8af60e8f40db-debian10/index_trae.js', 'LANG': 'en_US.UTF-8', 'SERVER_PIDFILE': '/home/pi/.trae-server/.stable-84967093b3105381f26e13eca4ab8af60e8f40db-21a76510.pid', 'SERVER_LOGS_DIR': '/home/pi/.trae-server/logs', 'TRAE_BRAND_NAME': 'Trae', 'DOWNLOAD_RETRY_COUNT': '0', 'VSCODE_GIT_IPC_HANDLE': '/run/user/1002/vscode-git-f128588436.sock', 'TERM_PROGRAM': 'vscode', 'AMENT_PREFIX_PATH': '/home/pi/Desktop/robot_move/my_base_learn/install/tbot_description:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/my_base:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_driver:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'SERVER_HOST': '127.0.0.1', 'SERVER_LOGFILE': '/home/pi/.trae-server/.stable-84967093b3105381f26e13eca4ab8af60e8f40db-21a76510.log', 'TRAE_STORE_REGION': 'SG', 'DISTRO_VSCODIUM_RELEASE': '', 'TMP_DIR': '/run/user/1002', 'SERVER_TOKENFILE': '/home/pi/.trae-server/.stable-84967093b3105381f26e13eca4ab8af60e8f40db-21a76510.token', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'VSCODE_GIT_ASKPASS_EXTRA_ARGS': '', 'TRAE_REMOTE_EXTENSION_REGION': 'cn', 'SERVER_EXTENSIONS_DIR': '/home/pi/.trae-server/extensions', 'PWD': '/home/pi/Desktop/robot_move/my_base_learn/build/my_base', 'LC_ALL': 'en_US.UTF-8', 'SERVER_APP_VERSION': '', 'TERM_PRODUCT': 'Trae', 'SSH_CONNECTION': '10.16.89.17 62631 10.16.89.13 22', 'XDG_DATA_DIRS': '/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'SERVER_ARCH': 'arm64', 'PYTHONPATH': '/home/pi/Desktop/robot_move/my_base_learn/install/robot_control/lib/python3.12/site-packages:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs/lib/python3.12/site-packages:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'TRAE_DETECT_REGION': 'CN', 'COLCON': '1', 'SERVER_APP_QUALITY': 'stable', 'SERVER_DATA_DIR': '/home/pi/.trae-server', 'REMOTE_VERSION': '1146106025986_3', 'CMAKE_PREFIX_PATH': '/home/pi/Desktop/robot_move/my_base_learn/install/tbot_description:/home/pi/Desktop/robot_move/my_base_learn/install/my_base:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_driver:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy'}), 'shell': False}
+[18.578016] (my_base) StdoutLine: {'line': b'-- Install configuration: ""\n'}
+[18.579296] (my_base) StdoutLine: {'line': b'-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/lib/my_base/my_base\n'}
+[18.590901] (my_base) StdoutLine: {'line': b'-- Set non-toolchain portion of runtime path of "/home/pi/Desktop/robot_move/my_base_learn/install/my_base/lib/my_base/my_base" to ""\n'}
+[18.591413] (my_base) StdoutLine: {'line': b'-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/ament_index/resource_index/package_run_dependencies/my_base\n'}
+[18.592110] (my_base) StdoutLine: {'line': b'-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/ament_index/resource_index/parent_prefix_path/my_base\n'}
+[18.592378] (my_base) StdoutLine: {'line': b'-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/environment/ament_prefix_path.sh\n'}
+[18.592548] (my_base) StdoutLine: {'line': b'-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/environment/ament_prefix_path.dsv\n'}
+[18.594599] (my_base) StdoutLine: {'line': b'-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/environment/path.sh\n'}
+[18.594818] (my_base) StdoutLine: {'line': b'-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/environment/path.dsv\n'}
+[18.594952] (my_base) StdoutLine: {'line': b'-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/local_setup.bash\n'}
+[18.595071] (my_base) StdoutLine: {'line': b'-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/local_setup.sh\n'}
+[18.595207] (my_base) StdoutLine: {'line': b'-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/local_setup.zsh\n'}
+[18.595322] (my_base) StdoutLine: {'line': b'-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/local_setup.dsv\n'}
+[18.595434] (my_base) StdoutLine: {'line': b'-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/package.dsv\n'}
+[18.596022] (my_base) StdoutLine: {'line': b'-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/ament_index/resource_index/packages/my_base\n'}
+[18.596167] (my_base) StdoutLine: {'line': b'-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/cmake/my_baseConfig.cmake\n'}
+[18.596325] (my_base) StdoutLine: {'line': b'-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/cmake/my_baseConfig-version.cmake\n'}
+[18.596474] (my_base) StdoutLine: {'line': b'-- Installing: /home/pi/Desktop/robot_move/my_base_learn/install/my_base/share/my_base/package.xml\n'}
+[18.597601] (my_base) CommandEnded: {'returncode': 0}
+[18.605762] (-) TimerEvent: {}
+[18.651662] (my_base) JobEnded: {'identifier': 'my_base', 'rc': 0}
+[18.654604] (-) EventReactorShutdown: {}

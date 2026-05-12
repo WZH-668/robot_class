@@ -1,0 +1,10 @@
+/home/pi/my_base/build/my_base/CMakeFiles/uninstall.dir
+/home/pi/my_base/build/my_base/CMakeFiles/my_base_uninstall.dir
+/home/pi/my_base/build/my_base/CMakeFiles/my_base.dir
+/home/pi/my_base/build/my_base/CMakeFiles/test.dir
+/home/pi/my_base/build/my_base/CMakeFiles/edit_cache.dir
+/home/pi/my_base/build/my_base/CMakeFiles/rebuild_cache.dir
+/home/pi/my_base/build/my_base/CMakeFiles/list_install_components.dir
+/home/pi/my_base/build/my_base/CMakeFiles/install.dir
+/home/pi/my_base/build/my_base/CMakeFiles/install/local.dir
+/home/pi/my_base/build/my_base/CMakeFiles/install/strip.dir

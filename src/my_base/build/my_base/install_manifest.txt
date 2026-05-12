@@ -1,0 +1,16 @@
+/home/pi/my_base/install/my_base/lib/my_base/my_base
+/home/pi/my_base/install/my_base/share/ament_index/resource_index/package_run_dependencies/my_base
+/home/pi/my_base/install/my_base/share/ament_index/resource_index/parent_prefix_path/my_base
+/home/pi/my_base/install/my_base/share/my_base/environment/ament_prefix_path.sh
+/home/pi/my_base/install/my_base/share/my_base/environment/ament_prefix_path.dsv
+/home/pi/my_base/install/my_base/share/my_base/environment/path.sh
+/home/pi/my_base/install/my_base/share/my_base/environment/path.dsv
+/home/pi/my_base/install/my_base/share/my_base/local_setup.bash
+/home/pi/my_base/install/my_base/share/my_base/local_setup.sh
+/home/pi/my_base/install/my_base/share/my_base/local_setup.zsh
+/home/pi/my_base/install/my_base/share/my_base/local_setup.dsv
+/home/pi/my_base/install/my_base/share/my_base/package.dsv
+/home/pi/my_base/install/my_base/share/ament_index/resource_index/packages/my_base
+/home/pi/my_base/install/my_base/share/my_base/cmake/my_baseConfig.cmake
+/home/pi/my_base/install/my_base/share/my_base/cmake/my_baseConfig-version.cmake
+/home/pi/my_base/install/my_base/share/my_base/package.xml
