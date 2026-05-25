@@ -1,5 +1,0 @@
-In file included from [01m[K/home/pi/Desktop/robot_move/my_base_learn/src/my_base/src/my_base.cpp:1[m[K:
-[01m[K/home/pi/Desktop/robot_move/my_base_learn/src/my_base/src/bot_serial.h:[m[K In member function ‘[01m[Kbool turn_on_robot::[01;32m[KGet_Sensor_Data_New[m[K()[m[K’:
-[01m[K/home/pi/Desktop/robot_move/my_base_learn/src/my_base/src/bot_serial.h:138:20:[m[K [01;35m[Kwarning: [m[Kunused variable ‘[01m[Kerror[m[K’ [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wunused-variable-Wunused-variable]8;;[m[K]
-  138 |   uint8_t check=0, [01;35m[Kerror[m[K=1;
-      |                    [01;35m[K^~~~~[m[K
