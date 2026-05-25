@@ -1,8 +1,9 @@
 # Robot Move Learn 项目指南
 
-本项目是一个基于 **ROS 2 (Jazzy)** 的机器人底盘控制与感知系统，主要用于 Wheeltec 机器人底盘的驱动、LSLidar 激光雷达的集成以及自动化运动控制。本课程为深圳职业技术学院未来技术学院核心实训课程《移动机器人基础》，课程依托轮趣三轮智能小车硬件平台，系统开展ROS2机器人操作系统的理论学习与实操训练。课程以研发一款功能性扫地移动机器人为最终实训目标，围绕轮趣三轮小车完成全流程开发与调试。学生将通过课程学习，实现机器人未知环境建图、自主路径巡航、智能避障规避、自动吸尘清扫等核心功能，完整掌握移动机器人感知、规划、控制与执行的全链条技术，夯实智能移动机器人开发的核心能力。
+本项目基于ROS 2 Jazzy系统搭建机器人底盘控制与环境感知体系，实现轮趣小车底盘驱动、LSLidar激光雷达适配集成与自动化运动控制。  项目隶属于深圳职业技术学院未来技术学院核心实训课程《移动机器人基础》，课程以轮趣三轮智能小车为硬件载体，围绕ROS 2操作系统开展系统化理论学习与实操训练。本次实训以开发实用型扫地机器人为最终目标，完成小车全流程开发调试工作。  学习过程中可实现未知环境地图构建、自主路径行进、智能障碍物避让、自动吸尘清扫等核心功能，全面掌握移动机器人感知探测、路径规划、运动控制与指令执行全套技术，扎实锤炼智能机器人开发实操本领。
 
 ## 1. 核心功能包
+
 - **`my_base`**: 底盘驱动包。负责串口通信（`/dev/wheeltec_controller`）、`/cmd_vel` 速度指令解析及 `odom` 里程计发布。
 - **`lslidar_driver`**: 激光雷达驱动。支持力神 M10/N10 系列，发布 `/scan` 话题。
 - **`robot_control`**: 运动控制应用。包含圆形运动和“弓”字形运动逻辑。
@@ -12,6 +13,7 @@
 ## 2. 快速运行指南
 
 在运行任何节点前，请确保已编译并加载环境：
+
 ```bash
 cd ~/Desktop/robot_move/my_base_learn
 source /opt/ros/jazzy/setup.bash
@@ -20,6 +22,7 @@ source install/setup.bash
 ```
 
 ### A. 底盘控制与运动
+
 1. **启动底盘驱动**（必须先启动）：
    ```bash
    ros2 run my_base my_base
@@ -33,6 +36,7 @@ source install/setup.bash
    - **走“弓”字**：`ros2 run robot_control bow_controller`
 
 ### B. 雷达感知与测试
+
 1. **启动雷达驱动**：
    ```bash
    ros2 launch lslidar_driver lsn10p_launch.py
@@ -43,12 +47,14 @@ source install/setup.bash
    ```
 
 ### C. 模型可视化
+
 1. **启动 RViz 查看模型**：
    ```bash
    ros2 launch tbot_description display.launch.py
    ```
 
 ### D. 雷达建图（2D SLAM）
+
 1. **安装建图工具**：
    ```bash
    sudo apt update
@@ -92,9 +98,11 @@ source install/setup.bash
    ```
 
 ## 3. 硬件配置
+
 - **底盘串口设备**: `/dev/wheeltec_controller`
 - **底盘波特率**: `115200`
 - **雷达串口设备**: `/dev/wheeltec_lidar`
 - **雷达坐标系**: `laser`
 - **雷达安装高度**: `0 0 0.122`（相对 `base_link`）
 - **雷达型号**: LSLidar N10/M10 (UART 接口)
+
