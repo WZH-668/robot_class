@@ -171,7 +171,7 @@ bool turn_on_robot::Get_Sensor_Data_New()
         {
           // 校验成功，解析数据
           Receive_Data.Flag_Stop = Receive_Data.rx[1];
-          Robot_Vel.X = Odom_Trans(Receive_Data.rx[2], Receive_Data.rx[3]);
+          Robot_Vel.X = -Odom_Trans(Receive_Data.rx[2], Receive_Data.rx[3]);
           Robot_Vel.Y = Odom_Trans(Receive_Data.rx[4], Receive_Data.rx[5]);
           Robot_Vel.Z = Odom_Trans(Receive_Data.rx[6], Receive_Data.rx[7]);
           return true;

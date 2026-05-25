@@ -49,7 +49,7 @@ turn_on_robot::turn_on_robot():rclcpp::Node ("wheeltec_robot")
       try
      { 
 
-         Stm32_Serial.setPort("/dev/ttyACM0"); //Select the serial port number to enable //选择要开启的串口号
+         Stm32_Serial.setPort("/dev/wheeltec_controller"); //Select the serial port number to enable //选择要开启的串口号
        
          Stm32_Serial.setBaudrate(115200); //Set the baud rate //设置波特率
          serial::Timeout _time = serial::Timeout::simpleTimeout(2000); //Timeout //超时等待
@@ -71,20 +71,20 @@ void turn_on_robot::Cmd_Vel_Callback(const geometry_msgs::msg::Twist::SharedPtr 
 {
   Send_Data.tx[0]=FRAME_HEADER; //frame head 0x7B 
   Send_Data.tx[2] = 0; //set aside //预留位
-  printf("%f:%f:%f", twist_aux->linear.x,twist_aux->linear.x,twist_aux->angular.z);
+  printf("%f:%f:%f", twist_aux->linear.x,twist_aux->linear.y,twist_aux->angular.z);
   RCLCPP_INFO(this->get_logger(),"cmd is ready"); 
   //The target velocity of the X-axis of the robot
-  //机器人x轴的目标线速度,对调后使用 linear.y
+  //机器人x轴的目标线速度，底盘坐标与ROS前进方向相反，因此对 linear.x 取反
   short temp=0;
-  temp=twist_aux->linear.y*1000;
+  temp=-twist_aux->linear.x*1000;
   Send_Data.tx[4]=temp;
   Send_Data.tx[3]=temp>>8;
 
 
   //The target velocity of the Y-axis of the robot
-  //机器人y轴的目标线速度，对调后使用 linear.x
+  //机器人y轴的目标线速度，使用 linear.y
   temp=0;
-  temp=twist_aux->linear.x*1000;
+  temp=twist_aux->linear.y*1000;
   Send_Data.tx[6]=temp;
   Send_Data.tx[5]=temp>>8;
   
