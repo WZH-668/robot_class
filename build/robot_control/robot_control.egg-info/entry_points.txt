@@ -1,0 +1,3 @@
+[console_scripts]
+bow_controller = robot_control.bow_controller:main
+circle_controller = robot_control.circle_controller:main

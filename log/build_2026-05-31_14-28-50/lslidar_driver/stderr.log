@@ -1,0 +1,7 @@
+[01m[K/home/pi/Desktop/robot_move/my_base_learn/src/lslidar_driver/LSLIDAR_X_ROS2-20240228/src/lslidar_driver/src/lslidar_driver.cc:[m[K In member function ‘[01m[Kbool lslidar_driver::LslidarDriver::[01;32m[Kpolling[m[K()[m[K’:
+[01m[K/home/pi/Desktop/robot_move/my_base_learn/src/lslidar_driver/LSLIDAR_X_ROS2-20240228/src/lslidar_driver/src/lslidar_driver.cc:1293:24:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid[01;32m[K operator delete[m[K(void*, std::size_t)[m[K’ called on pointer returned from a mismatched allocation function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmismatched-new-delete-Wmismatched-new-delete]8;;[m[K]
+ 1293 |                 delete [01;35m[Kpacket_bytes[m[K;
+      |                        [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/home/pi/Desktop/robot_move/my_base_learn/src/lslidar_driver/LSLIDAR_X_ROS2-20240228/src/lslidar_driver/src/lslidar_driver.cc:1150:68:[m[K [01;36m[Knote: [m[Kreturned from ‘[01m[Kvoid*[01;32m[K operator new [][m[K(std::size_t)[m[K’
+ 1150 |                 unsigned char *packet_bytes = new unsigned char[500[01;36m[K][m[K;
+      |                                                                    [01;36m[K^[m[K

@@ -1,0 +1,41 @@
+[4.115s] Invoking command in '/home/pi/Desktop/robot_move/my_base_learn/src/robot_control': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/pi/Desktop/robot_move/build/robot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pi/Desktop/robot_move/install/robot_control/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/robot_control build --build-base /home/pi/Desktop/robot_move/build/robot_control/build install --record /home/pi/Desktop/robot_move/build/robot_control/install.log --single-version-externally-managed install_data
+[4.572s] running egg_info
+[4.572s] creating ../../../build/robot_control/robot_control.egg-info
+[4.602s] writing ../../../build/robot_control/robot_control.egg-info/PKG-INFO
+[4.604s] writing dependency_links to ../../../build/robot_control/robot_control.egg-info/dependency_links.txt
+[4.604s] writing entry points to ../../../build/robot_control/robot_control.egg-info/entry_points.txt
+[4.604s] writing requirements to ../../../build/robot_control/robot_control.egg-info/requires.txt
+[4.604s] writing top-level names to ../../../build/robot_control/robot_control.egg-info/top_level.txt
+[4.605s] writing manifest file '../../../build/robot_control/robot_control.egg-info/SOURCES.txt'
+[4.663s] reading manifest file '../../../build/robot_control/robot_control.egg-info/SOURCES.txt'
+[4.665s] writing manifest file '../../../build/robot_control/robot_control.egg-info/SOURCES.txt'
+[4.666s] running build
+[4.666s] running build_py
+[4.667s] creating /home/pi/Desktop/robot_move/build/robot_control/build
+[4.672s] creating /home/pi/Desktop/robot_move/build/robot_control/build/lib
+[4.673s] creating /home/pi/Desktop/robot_move/build/robot_control/build/lib/robot_control
+[4.673s] copying robot_control/__init__.py -> /home/pi/Desktop/robot_move/build/robot_control/build/lib/robot_control
+[4.673s] copying robot_control/bow_controller.py -> /home/pi/Desktop/robot_move/build/robot_control/build/lib/robot_control
+[4.673s] copying robot_control/circle_controller.py -> /home/pi/Desktop/robot_move/build/robot_control/build/lib/robot_control
+[4.673s] running install
+[4.684s] running install_lib
+[4.728s] creating /home/pi/Desktop/robot_move/install/robot_control/lib/python3.12/site-packages/robot_control
+[4.854s] copying /home/pi/Desktop/robot_move/build/robot_control/build/lib/robot_control/__init__.py -> /home/pi/Desktop/robot_move/install/robot_control/lib/python3.12/site-packages/robot_control
+[4.855s] copying /home/pi/Desktop/robot_move/build/robot_control/build/lib/robot_control/bow_controller.py -> /home/pi/Desktop/robot_move/install/robot_control/lib/python3.12/site-packages/robot_control
+[4.855s] copying /home/pi/Desktop/robot_move/build/robot_control/build/lib/robot_control/circle_controller.py -> /home/pi/Desktop/robot_move/install/robot_control/lib/python3.12/site-packages/robot_control
+[4.856s] byte-compiling /home/pi/Desktop/robot_move/install/robot_control/lib/python3.12/site-packages/robot_control/__init__.py to __init__.cpython-312.pyc
+[4.857s] byte-compiling /home/pi/Desktop/robot_move/install/robot_control/lib/python3.12/site-packages/robot_control/bow_controller.py to bow_controller.cpython-312.pyc
+[4.859s] byte-compiling /home/pi/Desktop/robot_move/install/robot_control/lib/python3.12/site-packages/robot_control/circle_controller.py to circle_controller.cpython-312.pyc
+[4.860s] running install_data
+[4.860s] creating /home/pi/Desktop/robot_move/install/robot_control/share/ament_index
+[4.861s] creating /home/pi/Desktop/robot_move/install/robot_control/share/ament_index/resource_index
+[4.861s] creating /home/pi/Desktop/robot_move/install/robot_control/share/ament_index/resource_index/packages
+[4.861s] copying resource/robot_control -> /home/pi/Desktop/robot_move/install/robot_control/share/ament_index/resource_index/packages
+[4.861s] copying package.xml -> /home/pi/Desktop/robot_move/install/robot_control/share/robot_control
+[4.863s] running install_egg_info
+[4.891s] Copying ../../../build/robot_control/robot_control.egg-info to /home/pi/Desktop/robot_move/install/robot_control/lib/python3.12/site-packages/robot_control-0.0.0-py3.12.egg-info
+[4.894s] running install_scripts
+[5.146s] Installing bow_controller script to /home/pi/Desktop/robot_move/install/robot_control/lib/robot_control
+[5.147s] Installing circle_controller script to /home/pi/Desktop/robot_move/install/robot_control/lib/robot_control
+[5.147s] writing list of installed files to '/home/pi/Desktop/robot_move/build/robot_control/install.log'
+[5.290s] Invoked command in '/home/pi/Desktop/robot_move/my_base_learn/src/robot_control' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/pi/Desktop/robot_move/build/robot_control/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pi/Desktop/robot_move/install/robot_control/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/robot_control build --build-base /home/pi/Desktop/robot_move/build/robot_control/build install --record /home/pi/Desktop/robot_move/build/robot_control/install.log --single-version-externally-managed install_data

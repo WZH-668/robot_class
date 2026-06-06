@@ -1,0 +1,10 @@
+{
+  "package_name": "lslidar_msgs",
+  "non_idl_tuples": [
+    "/home/pi/Desktop/robot_move/my_base_learn/src/lslidar_driver/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs:msg/LslidarDifop.msg",
+    "/home/pi/Desktop/robot_move/my_base_learn/src/lslidar_driver/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs:msg/LslidarPacket.msg",
+    "/home/pi/Desktop/robot_move/my_base_learn/src/lslidar_driver/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs:msg/LslidarPoint.msg",
+    "/home/pi/Desktop/robot_move/my_base_learn/src/lslidar_driver/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs:msg/LslidarScan.msg",
+    "/home/pi/Desktop/robot_move/my_base_learn/src/lslidar_driver/LSLIDAR_X_ROS2-20240228/src/lslidar_msgs:msg/LslidarSweep.msg"
+  ]
+}

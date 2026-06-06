@@ -1,0 +1,41 @@
+[4.150s] Invoking command in '/home/pi/Desktop/robot_move/my_base_learn/src/lidar_test': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/pi/Desktop/robot_move/build/lidar_test/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pi/Desktop/robot_move/install/lidar_test/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/lidar_test build --build-base /home/pi/Desktop/robot_move/build/lidar_test/build install --record /home/pi/Desktop/robot_move/build/lidar_test/install.log --single-version-externally-managed install_data
+[4.580s] running egg_info
+[4.583s] creating ../../../build/lidar_test/lidar_test.egg-info
+[4.616s] writing ../../../build/lidar_test/lidar_test.egg-info/PKG-INFO
+[4.618s] writing dependency_links to ../../../build/lidar_test/lidar_test.egg-info/dependency_links.txt
+[4.618s] writing entry points to ../../../build/lidar_test/lidar_test.egg-info/entry_points.txt
+[4.618s] writing requirements to ../../../build/lidar_test/lidar_test.egg-info/requires.txt
+[4.618s] writing top-level names to ../../../build/lidar_test/lidar_test.egg-info/top_level.txt
+[4.619s] writing manifest file '../../../build/lidar_test/lidar_test.egg-info/SOURCES.txt'
+[4.676s] reading manifest file '../../../build/lidar_test/lidar_test.egg-info/SOURCES.txt'
+[4.677s] writing manifest file '../../../build/lidar_test/lidar_test.egg-info/SOURCES.txt'
+[4.680s] running build
+[4.680s] running build_py
+[4.681s] creating /home/pi/Desktop/robot_move/build/lidar_test/build
+[4.681s] creating /home/pi/Desktop/robot_move/build/lidar_test/build/lib
+[4.681s] creating /home/pi/Desktop/robot_move/build/lidar_test/build/lib/lidar_test
+[4.681s] copying lidar_test/__init__.py -> /home/pi/Desktop/robot_move/build/lidar_test/build/lib/lidar_test
+[4.681s] copying lidar_test/test_accurity.py -> /home/pi/Desktop/robot_move/build/lidar_test/build/lib/lidar_test
+[4.684s] copying lidar_test/trace_thing.py -> /home/pi/Desktop/robot_move/build/lidar_test/build/lib/lidar_test
+[4.685s] running install
+[4.697s] running install_lib
+[4.726s] creating /home/pi/Desktop/robot_move/install/lidar_test/lib/python3.12/site-packages/lidar_test
+[4.729s] copying /home/pi/Desktop/robot_move/build/lidar_test/build/lib/lidar_test/__init__.py -> /home/pi/Desktop/robot_move/install/lidar_test/lib/python3.12/site-packages/lidar_test
+[4.729s] copying /home/pi/Desktop/robot_move/build/lidar_test/build/lib/lidar_test/test_accurity.py -> /home/pi/Desktop/robot_move/install/lidar_test/lib/python3.12/site-packages/lidar_test
+[4.729s] copying /home/pi/Desktop/robot_move/build/lidar_test/build/lib/lidar_test/trace_thing.py -> /home/pi/Desktop/robot_move/install/lidar_test/lib/python3.12/site-packages/lidar_test
+[4.730s] byte-compiling /home/pi/Desktop/robot_move/install/lidar_test/lib/python3.12/site-packages/lidar_test/__init__.py to __init__.cpython-312.pyc
+[4.734s] byte-compiling /home/pi/Desktop/robot_move/install/lidar_test/lib/python3.12/site-packages/lidar_test/test_accurity.py to test_accurity.cpython-312.pyc
+[4.752s] byte-compiling /home/pi/Desktop/robot_move/install/lidar_test/lib/python3.12/site-packages/lidar_test/trace_thing.py to trace_thing.cpython-312.pyc
+[4.753s] running install_data
+[4.753s] creating /home/pi/Desktop/robot_move/install/lidar_test/share/ament_index
+[4.753s] creating /home/pi/Desktop/robot_move/install/lidar_test/share/ament_index/resource_index
+[4.753s] creating /home/pi/Desktop/robot_move/install/lidar_test/share/ament_index/resource_index/packages
+[4.753s] copying resource/lidar_test -> /home/pi/Desktop/robot_move/install/lidar_test/share/ament_index/resource_index/packages
+[4.753s] copying package.xml -> /home/pi/Desktop/robot_move/install/lidar_test/share/lidar_test
+[4.753s] running install_egg_info
+[4.761s] Copying ../../../build/lidar_test/lidar_test.egg-info to /home/pi/Desktop/robot_move/install/lidar_test/lib/python3.12/site-packages/lidar_test-0.0.0-py3.12.egg-info
+[4.881s] running install_scripts
+[5.114s] Installing test_accurity script to /home/pi/Desktop/robot_move/install/lidar_test/lib/lidar_test
+[5.114s] Installing trace_thing script to /home/pi/Desktop/robot_move/install/lidar_test/lib/lidar_test
+[5.114s] writing list of installed files to '/home/pi/Desktop/robot_move/build/lidar_test/install.log'
+[5.230s] Invoked command in '/home/pi/Desktop/robot_move/my_base_learn/src/lidar_test' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/pi/Desktop/robot_move/build/lidar_test/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/pi/Desktop/robot_move/install/lidar_test/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../../build/lidar_test build --build-base /home/pi/Desktop/robot_move/build/lidar_test/build install --record /home/pi/Desktop/robot_move/build/lidar_test/install.log --single-version-externally-managed install_data

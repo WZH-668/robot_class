@@ -1,0 +1,36 @@
+{
+  "type_description_msg": {
+    "type_description": {
+      "type_name": "lslidar_msgs/msg/LslidarDifop",
+      "fields": [
+        {
+          "name": "temperature",
+          "type": {
+            "type_id": 8,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        },
+        {
+          "name": "rpm",
+          "type": {
+            "type_id": 8,
+            "capacity": 0,
+            "string_capacity": 0,
+            "nested_type_name": ""
+          },
+          "default_value": ""
+        }
+      ]
+    },
+    "referenced_type_descriptions": []
+  },
+  "type_hashes": [
+    {
+      "type_name": "lslidar_msgs/msg/LslidarDifop",
+      "hash_string": "RIHS01_391ae8fe9b2566a8f325c6b24665c64992ee9345e45cbf9849ef66a96272505b"
+    }
+  ]
+}
