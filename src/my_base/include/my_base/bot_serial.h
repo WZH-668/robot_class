@@ -8,6 +8,9 @@
 #include <nav_msgs/msg/odometry.hpp>
 #include <tf2_ros/transform_broadcaster.h>
 #include "tf2_geometry_msgs/tf2_geometry_msgs.hpp"
+#include "sensor_msgs/msg/imu.hpp"
+#include "std_msgs/msg/bool.hpp"
+#include "std_msgs/msg/float32.hpp"
 
 //宏定义
 #define SEND_DATA_CHECK   1          //Send data check flag bits //发送数据校验标志位
@@ -52,7 +55,14 @@ typedef struct _RECEIVE_DATA_
     unsigned char Frame_Header;
     float X_speed;  
     float Y_speed;  
-    float Z_speed;  	
+    float Z_speed;
+    short Accel_X;    // Accelerometer X axis raw data //加速度计X轴原始数据
+    short Accel_Y;    // Accelerometer Y axis raw data //加速度计Y轴原始数据
+    short Accel_Z;    // Accelerometer Z axis raw data //加速度计Z轴原始数据
+    short Gyro_X;     // Gyroscope X axis raw data //陀螺仪X轴原始数据
+    short Gyro_Y;     // Gyroscope Y axis raw data //陀螺仪Y轴原始数据
+    short Gyro_Z;     // Gyroscope Z axis raw data //陀螺仪Z轴原始数据
+    float Battery_Voltage;  // Battery voltage //电池电压
     unsigned char Frame_Tail;
 }RECEIVE_DATA;
 //ROS向下位机发送数据的结构体
@@ -81,16 +91,26 @@ class turn_on_robot : public rclcpp::Node
 	private:
 		rclcpp::Time _Now, _Last_Time;  //Time dependent, used for integration to find displacement (mileage) //时间相关，用于积分求位移(里程)
 		rclcpp::Subscription<geometry_msgs::msg::Twist>::SharedPtr Cmd_Vel_Sub;
+    rclcpp::Subscription<std_msgs::msg::Bool>::SharedPtr Fan_Cmd_Sub;
     rclcpp::Publisher<nav_msgs::msg::Odometry>::SharedPtr odom_publisher; 
+    rclcpp::Publisher<sensor_msgs::msg::Imu>::SharedPtr imu_publisher;  // IMU data publisher //IMU数据发布者
+    rclcpp::Publisher<std_msgs::msg::Float32>::SharedPtr battery_publisher;  // Battery voltage publisher //电池电压发布者
     //Initialize the topic subscriber //初始化话题订阅者
     float Sampling_Time;         //Sampling time, used for integration to find displacement (mileage) //采样时间，用于积分求位移(里程)
     Vel_Pos_Data Robot_Vel;
     Vel_Pos_Data Robot_Pos;
     RECEIVE_DATA Receive_Data; //The serial port receives the data structure //串口接收数据结构体
     SEND_DATA Send_Data;       //The serial port sends the data structure //串口发送数据结构体 
+    bool pub_odom_tf_;         //Whether to publish odom->base_footprint TF //是否发布odom->base_footprint TF
+    bool Fan_State;            //Fan state (on/off) //风机状态（开/关）
+    float Cmd_Linear_X;        //Commanded linear velocity X //命令线速度X
+    float Cmd_Linear_Y;        //Commanded linear velocity Y //命令线速度Y
+    float Cmd_Angular_Z;       //Commanded angular velocity Z //命令角速度Z
     bool Get_Sensor_Data_New();
     unsigned char Check_Sum(unsigned char Count_Number,unsigned char mode);
     void Cmd_Vel_Callback(const geometry_msgs::msg::Twist::SharedPtr twist_aux);
+    void Fan_Cmd_Callback(const std_msgs::msg::Bool::SharedPtr msg);
+    void Send_Control_Frame(float linear_x, float linear_y, float angular_z);
     void Publish_Odom();      //Pub the speedometer topic //发布里程计话题 
     short IMU_Trans(uint8_t Data_High,uint8_t Data_Low);
     float Odom_Trans(uint8_t Data_High,uint8_t Data_Low);

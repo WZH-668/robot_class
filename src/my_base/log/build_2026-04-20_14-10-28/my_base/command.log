@@ -1,6 +1,0 @@
-Invoking command in '/home/pi/my_base/build/my_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/pi/my_base -DCMAKE_INSTALL_PREFIX=/home/pi/my_base/install/my_base
-Invoked command in '/home/pi/my_base/build/my_base' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake /home/pi/my_base -DCMAKE_INSTALL_PREFIX=/home/pi/my_base/install/my_base
-Invoking command in '/home/pi/my_base/build/my_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/pi/my_base/build/my_base -- -j4 -l4
-Invoked command in '/home/pi/my_base/build/my_base' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --build /home/pi/my_base/build/my_base -- -j4 -l4
-Invoking command in '/home/pi/my_base/build/my_base': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/pi/my_base/build/my_base
-Invoked command in '/home/pi/my_base/build/my_base' returned '0': CMAKE_PREFIX_PATH=${CMAKE_PREFIX_PATH}:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com /usr/bin/cmake --install /home/pi/my_base/build/my_base

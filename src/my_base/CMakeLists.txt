@@ -33,16 +33,36 @@ find_package(rclcpp REQUIRED)
 find_package(geometry_msgs REQUIRED)
 find_package(tf2_geometry_msgs REQUIRED)
 find_package(nav_msgs REQUIRED)
-
-# 直接定义串口库的路径和头文件路径
-set(SERIAL_LIB "/usr/local/lib/libserial.so")
-include_directories(/usr/local/include)
+find_package(std_msgs REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(serial QUIET)
 
 add_executable(my_base src/my_base.cpp)
-ament_target_dependencies(my_base nav_msgs rclcpp tf2_geometry_msgs)
-target_link_libraries(my_base ${SERIAL_LIB})
+ament_target_dependencies(my_base nav_msgs rclcpp tf2_geometry_msgs geometry_msgs std_msgs sensor_msgs)
 
-#ament_target_dependencies(my_base  serial )
+if(serial_FOUND)
+  if(TARGET serial::serial)
+    target_link_libraries(my_base serial::serial)
+  elseif(TARGET serial)
+    target_link_libraries(my_base serial)
+  elseif(DEFINED serial_LIBRARIES)
+    target_link_libraries(my_base ${serial_LIBRARIES})
+  endif()
+  if(DEFINED serial_INCLUDE_DIRS)
+    target_include_directories(my_base PRIVATE ${serial_INCLUDE_DIRS})
+  endif()
+else()
+  target_include_directories(my_base PRIVATE /usr/local/include)
+  target_link_libraries(my_base /usr/local/lib/libserial.so)
+endif()
+
+
+install(PROGRAMS
+  scripts/fan_keyboard.py
+  DESTINATION lib/${PROJECT_NAME}
+)
+
+
 install(TARGETS
   my_base
   DESTINATION lib/${PROJECT_NAME}

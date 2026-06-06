@@ -106,3 +106,54 @@ source install/setup.bash
 - **雷达安装高度**: `0 0 0.122`（相对 `base_link`）
 - **雷达型号**: LSLidar N10/M10 (UART 接口)
 
+## 4. 树莓派通过 USB 串口控制风机
+
+当前连接方式为：`树莓派 -> USB -> STM32 下位机`。
+
+已确认串口设备为：`/dev/ttyACM0`
+
+### A. 协议说明
+
+- 总长度：`11` 字节
+- 帧头：`0x7B`
+- 帧尾：`0x7D`
+- 波特率：`115200`
+- `byte2` 的 `bit0=1` 表示开风机，`bit0=0` 表示关风机
+
+### B. 开关风机命令
+
+1. **开风机**：
+   ```bash
+   python3 -c "import serial; ser=serial.Serial('/dev/ttyACM0',115200,timeout=1); ser.write(bytes.fromhex('7B 00 01 00 00 00 00 00 00 7A 7D')); ser.close()"
+   ```
+
+2. **关风机**：
+   ```bash
+   python3 -c "import serial; ser=serial.Serial('/dev/ttyACM0',115200,timeout=1); ser.write(bytes.fromhex('7B 00 00 00 00 00 00 00 00 7B 7D')); ser.close()"
+   ```
+
+### C. 端口检查
+
+先查看当前 USB 串口设备：
+
+```bash
+ls /dev/ttyUSB* /dev/ttyACM* 2>/dev/null
+```
+
+如果输出为 ` /dev/ttyACM0`，则发送命令时应使用 `/dev/ttyACM0`，不能写成 `/dev/ttyUSB0`。
+
+### D. 依赖安装
+
+如果树莓派未安装串口 Python 库，先执行：
+
+```bash
+pip3 install pyserial
+```
+
+### E. 注意事项
+
+- 树莓派终端不能直接执行 `Fan_Set(1)` 或 `Fan_Set(0)`，因为这是 STM32 固件内部函数
+- 树莓派需要做的是通过串口发送协议帧，让 STM32 在接收逻辑中调用 `Fan_Set()`
+- 若发送后风机无反应，需要继续确认这一路 USB 串口是否最终进入 STM32 的 `USART3` 协议处理逻辑
+- 树莓派与 STM32 通信时应保证供电稳定，通信链路正常
+
