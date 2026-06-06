@@ -1,0 +1,79 @@
+[0.031s] Invoking command in '/home/pi/Desktop/robot_move/build/lslidar_driver': AMENT_PREFIX_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs:/home/pi/Desktop/robot_move/my_base_learn/install/tbot_description:/home/pi/Desktop/robot_move/my_base_learn/install/my_base:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_driver:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/pi/Desktop/robot_move/install/lslidar_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/pi/Desktop/robot_move/my_base_learn/src/lslidar_driver/LSLIDAR_X_ROS2-20240228/src/lslidar_driver -DCMAKE_INSTALL_PREFIX=/home/pi/Desktop/robot_move/install/lslidar_driver
+[0.181s] -- The C compiler identification is GNU 13.3.0
+[0.335s] -- The CXX compiler identification is GNU 13.3.0
+[0.370s] -- Detecting C compiler ABI info
+[0.583s] -- Detecting C compiler ABI info - done
+[0.608s] -- Check for working C compiler: /usr/bin/cc - skipped
+[0.609s] -- Detecting C compile features
+[0.609s] -- Detecting C compile features - done
+[0.629s] -- Detecting CXX compiler ABI info
+[0.856s] -- Detecting CXX compiler ABI info - done
+[0.873s] -- Check for working CXX compiler: /usr/bin/c++ - skipped
+[0.873s] -- Detecting CXX compile features
+[0.874s] -- Detecting CXX compile features - done
+[1.314s] -- Found Boost: /usr/lib/aarch64-linux-gnu/cmake/Boost-1.83.0/BoostConfig.cmake (found version "1.83.0") found components: thread 
+[1.329s] -- Found rclcpp: 28.1.16 (/opt/ros/jazzy/share/rclcpp/cmake)
+[1.602s] -- Found Python3: /usr/bin/python3 (found version "3.12.3") found components: Interpreter 
+[1.893s] -- Found rosidl_generator_c: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_c/cmake)
+[1.917s] -- Found rosidl_generator_cpp: 4.6.7 (/opt/ros/jazzy/share/rosidl_generator_cpp/cmake)
+[1.945s] -- Using all available rosidl_typesupport_c: rosidl_typesupport_fastrtps_c;rosidl_typesupport_introspection_c
+[1.976s] -- Using all available rosidl_typesupport_cpp: rosidl_typesupport_fastrtps_cpp;rosidl_typesupport_introspection_cpp
+[2.097s] -- Found rmw_implementation_cmake: 7.3.3 (/opt/ros/jazzy/share/rmw_implementation_cmake/cmake)
+[2.103s] -- Found rmw_fastrtps_cpp: 8.4.3 (/opt/ros/jazzy/share/rmw_fastrtps_cpp/cmake)
+[2.249s] -- Found OpenSSL: /usr/lib/aarch64-linux-gnu/libcrypto.so (found version "3.0.13")  
+[2.282s] -- Found FastRTPS: /opt/ros/jazzy/include (Required is at least version "2.13") 
+[2.319s] -- Using RMW implementation 'rmw_fastrtps_cpp' as default
+[2.574s] -- Found diagnostic_updater: 4.2.6 (/opt/ros/jazzy/share/diagnostic_updater/cmake)
+[2.986s] -- Found lslidar_msgs: 1.2.0 (/home/pi/Desktop/robot_move/install/lslidar_msgs/share/lslidar_msgs/cmake)
+[3.022s] -- Found pluginlib: 5.4.4 (/opt/ros/jazzy/share/pluginlib/cmake)
+[3.058s] -- Found sensor_msgs: 5.3.6 (/opt/ros/jazzy/share/sensor_msgs/cmake)
+[3.314s] -- Configuring done (3.3s)
+[3.686s] -- Generating done (0.3s)
+[3.701s] -- Build files have been written to: /home/pi/Desktop/robot_move/build/lslidar_driver
+[3.748s] Invoked command in '/home/pi/Desktop/robot_move/build/lslidar_driver' returned '0': AMENT_PREFIX_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs:/home/pi/Desktop/robot_move/my_base_learn/install/tbot_description:/home/pi/Desktop/robot_move/my_base_learn/install/my_base:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_driver:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/pi/Desktop/robot_move/install/lslidar_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake /home/pi/Desktop/robot_move/my_base_learn/src/lslidar_driver/LSLIDAR_X_ROS2-20240228/src/lslidar_driver -DCMAKE_INSTALL_PREFIX=/home/pi/Desktop/robot_move/install/lslidar_driver
+[3.749s] Invoking command in '/home/pi/Desktop/robot_move/build/lslidar_driver': AMENT_PREFIX_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs:/home/pi/Desktop/robot_move/my_base_learn/install/tbot_description:/home/pi/Desktop/robot_move/my_base_learn/install/my_base:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_driver:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/pi/Desktop/robot_move/install/lslidar_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/pi/Desktop/robot_move/build/lslidar_driver -- -j4 -l4
+[3.880s] [ 20%] [32mBuilding CXX object CMakeFiles/lslidar_driver_node.dir/src/lslidar_driver.cc.o[0m
+[3.899s] [ 40%] [32mBuilding CXX object CMakeFiles/lslidar_driver_node.dir/src/lslidar_driver_node.cc.o[0m
+[3.905s] [ 60%] [32mBuilding CXX object CMakeFiles/lslidar_driver_node.dir/src/lsiosr.cpp.o[0m
+[3.906s] [ 80%] [32mBuilding CXX object CMakeFiles/lslidar_driver_node.dir/src/input.cc.o[0m
+[18.965s] [01m[K/home/pi/Desktop/robot_move/my_base_learn/src/lslidar_driver/LSLIDAR_X_ROS2-20240228/src/lslidar_driver/src/lslidar_driver.cc:[m[K In member function ‘[01m[Kbool lslidar_driver::LslidarDriver::[01;32m[Kpolling[m[K()[m[K’:
+[18.965s] [01m[K/home/pi/Desktop/robot_move/my_base_learn/src/lslidar_driver/LSLIDAR_X_ROS2-20240228/src/lslidar_driver/src/lslidar_driver.cc:1293:24:[m[K [01;35m[Kwarning: [m[K‘[01m[Kvoid[01;32m[K operator delete[m[K(void*, std::size_t)[m[K’ called on pointer returned from a mismatched allocation function [[01;35m[K]8;;https://gcc.gnu.org/onlinedocs/gcc/Warning-Options.html#index-Wmismatched-new-delete-Wmismatched-new-delete]8;;[m[K]
+[18.965s]  1293 |                 delete [01;35m[Kpacket_bytes[m[K;
+[18.965s]       |                        [01;35m[K^~~~~~~~~~~~[m[K
+[18.965s] [01m[K/home/pi/Desktop/robot_move/my_base_learn/src/lslidar_driver/LSLIDAR_X_ROS2-20240228/src/lslidar_driver/src/lslidar_driver.cc:1150:68:[m[K [01;36m[Knote: [m[Kreturned from ‘[01m[Kvoid*[01;32m[K operator new [][m[K(std::size_t)[m[K’
+[18.965s]  1150 |                 unsigned char *packet_bytes = new unsigned char[500[01;36m[K][m[K;
+[18.965s]       |                                                                    [01;36m[K^[m[K
+[25.306s] [100%] [32m[1mLinking CXX executable lslidar_driver_node[0m
+[28.591s] [100%] Built target lslidar_driver_node
+[28.618s] Invoked command in '/home/pi/Desktop/robot_move/build/lslidar_driver' returned '0': AMENT_PREFIX_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs:/home/pi/Desktop/robot_move/my_base_learn/install/tbot_description:/home/pi/Desktop/robot_move/my_base_learn/install/my_base:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_driver:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/pi/Desktop/robot_move/install/lslidar_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --build /home/pi/Desktop/robot_move/build/lslidar_driver -- -j4 -l4
+[28.621s] Invoking command in '/home/pi/Desktop/robot_move/build/lslidar_driver': AMENT_PREFIX_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs:/home/pi/Desktop/robot_move/my_base_learn/install/tbot_description:/home/pi/Desktop/robot_move/my_base_learn/install/my_base:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_driver:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/pi/Desktop/robot_move/install/lslidar_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/pi/Desktop/robot_move/build/lslidar_driver
+[28.638s] -- Install configuration: ""
+[28.638s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/launch
+[28.638s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/launch/lslidar_double_launch.py
+[28.649s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/launch/lsn10p_launch.py
+[28.660s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/launch/viewer_scan_launch.py
+[28.664s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/params
+[28.664s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/params/lidar_uart_ros2
+[28.664s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/params/lidar_uart_ros2/lsn10.yaml
+[28.668s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/params/lidar_uart_ros2/lsn10p.yaml
+[28.670s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/rviz
+[28.670s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/rviz/lslidar.rviz
+[28.675s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/lib/lslidar_driver/lslidar_driver_node
+[28.695s] -- Set non-toolchain portion of runtime path of "/home/pi/Desktop/robot_move/install/lslidar_driver/lib/lslidar_driver/lslidar_driver_node" to ""
+[28.695s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/ament_index/resource_index/package_run_dependencies/lslidar_driver
+[28.695s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/ament_index/resource_index/parent_prefix_path/lslidar_driver
+[28.695s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/environment/ament_prefix_path.sh
+[28.695s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/environment/ament_prefix_path.dsv
+[28.695s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/environment/path.sh
+[28.696s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/environment/path.dsv
+[28.696s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/local_setup.bash
+[28.698s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/local_setup.sh
+[28.698s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/local_setup.zsh
+[28.698s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/local_setup.dsv
+[28.698s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/package.dsv
+[28.698s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/ament_index/resource_index/packages/lslidar_driver
+[28.698s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/cmake/ament_cmake_export_dependencies-extras.cmake
+[28.698s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/cmake/lslidar_driverConfig.cmake
+[28.699s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/cmake/lslidar_driverConfig-version.cmake
+[28.699s] -- Installing: /home/pi/Desktop/robot_move/install/lslidar_driver/share/lslidar_driver/package.xml
+[28.702s] Invoked command in '/home/pi/Desktop/robot_move/build/lslidar_driver' returned '0': AMENT_PREFIX_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs:${AMENT_PREFIX_PATH} CMAKE_PREFIX_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs:/home/pi/Desktop/robot_move/my_base_learn/install/tbot_description:/home/pi/Desktop/robot_move/my_base_learn/install/my_base:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_driver:/home/pi/Desktop/robot_move/my_base_learn/install/lslidar_msgs:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor:/home/pi/Desktop/robot_move/my_base_learn/install/robot_control:/home/pi/Desktop/robot_move/my_base_learn/install/lidar_test:/opt/ros/jazzy DEBUGINFOD_URLS=https://debuginfod.ubuntu.com LD_LIBRARY_PATH=/home/pi/Desktop/robot_move/install/lslidar_msgs/lib:${LD_LIBRARY_PATH} PYTHONPATH=/home/pi/Desktop/robot_move/install/lslidar_msgs/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/cmake --install /home/pi/Desktop/robot_move/build/lslidar_driver

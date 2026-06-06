@@ -1,0 +1,3 @@
+[console_scripts]
+test_accurity = lidar_test.test_accurity:main
+trace_thing = lidar_test.trace_thing:main

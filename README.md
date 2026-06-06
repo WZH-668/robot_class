@@ -6,9 +6,11 @@
 
 - **`my_base`**: 底盘驱动包。负责串口通信（`/dev/wheeltec_controller`）、`/cmd_vel` 速度指令解析及 `odom` 里程计发布。
 - **`lslidar_driver`**: 激光雷达驱动。支持力神 M10/N10 系列，发布 `/scan` 话题。
-- **`robot_control`**: 运动控制应用。包含圆形运动和“弓”字形运动逻辑。
-- **`lidar_test`**: 感知测试工具。实时监控雷达数据准确性。
+- **`robot_control`**: 运动控制应用。包含圆形运动和"弓"字形运动逻辑。
+- **`lidar_test`**: 感知测试工具。包含雷达精度检测和自动追踪功能。
 - **`tbot_description`**: 机器人模型。包含 URDF 定义及 RViz 可视化配置。
+- **`imu_mpu6050`**: IMU 传感器驱动。读取 MPU6050 加速度计和陀螺仪数据，发布 `sensor_msgs/Imu` 消息。
+- **`robot_localization_config`**: EKF 融合定位配置。融合轮式里程计和 IMU 数据，输出更精确的 `odom_fused` 定位信息。
 
 ## 2. 快速运行指南
 
@@ -45,6 +47,38 @@ source install/setup.bash
    ```bash
    ros2 run lidar_test test_accurity
    ```
+3. **雷达自动追踪（对准最近物体）**：
+   ```bash
+   ros2 run lidar_test trace_thing
+   ```
+
+### E. IMU 数据采集与 EKF 融合定位
+
+1. **启动 MPU6050 IMU 节点**（I2C 接口）：
+   ```bash
+   ros2 launch imu_mpu6050 mpu6050_launch.py
+   ```
+   - 默认 I2C 地址：`0x68`
+   - 发布话题：`/imu/data_raw`
+
+2. **启动 EKF 融合定位**（需先关闭 my_base 的 TF 发布）：
+   ```bash
+   # 方式一：先启动底盘（不发布 odom TF）
+   ros2 run my_base my_base --ros-args -p pub_odom_tf:=false
+   
+   # 方式二：启动 EKF 融合节点
+   ros2 launch robot_localization_config localization_launch.py
+   ```
+   - EKF 融合 `odom`（里程计）和 `imu/data_raw`（IMU）数据
+   - 输出更精确的融合定位：`/odom_fused`
+   - 发布 TF：`odom → base_footprint`
+
+3. **IMU 依赖安装**（如未安装）：
+   ```bash
+   pip3 install smbus2
+   # 或
+   pip3 install smbus
+   ```
 
 ### C. 模型可视化
 
@@ -60,7 +94,7 @@ source install/setup.bash
    sudo apt update
    sudo apt install ros-$ROS_DISTRO-slam-toolbox ros-$ROS_DISTRO-nav2-map-server
    ```
-2. **依次启动 4 个节点**：
+2. **基础建图（仅雷达 + 底盘）**：
    ```bash
    ros2 run my_base my_base
    ```
@@ -73,11 +107,33 @@ source install/setup.bash
    ```bash
    ros2 launch slam_toolbox online_async_launch.py
    ```
-3. **确认输入正常**：
-   - 底盘发布 `odom -> base_footprint`
+
+3. **带 IMU 的 EKF 融合建图（推荐，定位更稳定）**：
+   ```bash
+   ros2 launch imu_mpu6050 mpu6050_launch.py
+   ```
+   ```bash
+   ros2 run my_base my_base --ros-args -p pub_odom_tf:=false
+   ```
+   ```bash
+   ros2 launch robot_localization_config localization_launch.py
+   ```
+   ```bash
+   ros2 launch tbot_description display.launch.py
+   ```
+   ```bash
+   ros2 launch lslidar_driver lsn10p_launch.py
+   ```
+   ```bash
+   ros2 launch slam_toolbox online_async_launch.py
+   ```
+
+4. **确认输入正常**：
+   - 底盘发布 `odom -> base_footprint`（或 EKF 发布 `odom -> base_footprint`）
    - 机器人模型提供 `base_link -> laser`
    - 雷达驱动发布 `/scan`，且 `frame_id` 为 `laser`
-4. **常用检查命令**：
+   - IMU 发布 `/imu/data_raw`（如使用 EKF 融合）
+5. **常用检查命令**：
    ```bash
    ros2 topic echo /scan --once
    ```
@@ -85,13 +141,17 @@ source install/setup.bash
    ros2 topic echo /odom --once
    ```
    ```bash
+   ros2 topic echo /imu/data_raw --once
+   ```
+   ```bash
    ros2 run tf2_ros tf2_echo base_footprint laser
    ```
-5. **建图操作建议**：
+6. **建图操作建议**：
    - 缓慢推动或遥控机器人绕场地一圈，避免急转和打滑
    - 先验证前进时 `odom.linear.x` 为正，再正式建图
    - 若地图重影或漂移，优先检查里程计方向和雷达安装朝向
-6. **保存地图**：
+   - 使用 EKF 融合后，旋转和直线运动的定位精度会明显提升
+7. **保存地图**：
    ```bash
    mkdir -p ~/Desktop/robot_move/maps
    ros2 run nav2_map_server map_saver_cli -f ~/Desktop/robot_move/maps/my_map
@@ -105,6 +165,8 @@ source install/setup.bash
 - **雷达坐标系**: `laser`
 - **雷达安装高度**: `0 0 0.122`（相对 `base_link`）
 - **雷达型号**: LSLidar N10/M10 (UART 接口)
+- **IMU 设备**: MPU6050 (I2C 接口，地址 `0x68`)
+- **IMU 安装位置**: 底盘中心，与 `base_link` 坐标系对齐
 
 ## 4. 树莓派通过 USB 串口控制风机
 
@@ -150,10 +212,27 @@ ls /dev/ttyUSB* /dev/ttyACM* 2>/dev/null
 pip3 install pyserial
 ```
 
-### E. 注意事项
+### E. 风机键盘控制节点
+
+除了直接发送串口命令，也可以使用 ROS2 节点控制风机：
+
+```bash
+ros2 run my_base fan_keyboard
+```
+
+按键说明：
+- `f`: 开风机
+- `g`: 关风机  
+- `q`: 退出
+
+该节点发布 `/fan_cmd` 话题（`Bool` 类型），可通过话题订阅方式集成到其他控制逻辑中。
+
+### F. 注意事项
 
 - 树莓派终端不能直接执行 `Fan_Set(1)` 或 `Fan_Set(0)`，因为这是 STM32 固件内部函数
 - 树莓派需要做的是通过串口发送协议帧，让 STM32 在接收逻辑中调用 `Fan_Set()`
 - 若发送后风机无反应，需要继续确认这一路 USB 串口是否最终进入 STM32 的 `USART3` 协议处理逻辑
 - 树莓派与 STM32 通信时应保证供电稳定，通信链路正常
+- 使用 EKF 融合时，务必先禁用 `my_base` 的 TF 发布（`pub_odom_tf:=false`），避免 TF 冲突
+- MPU6050 的 I2C 地址若不为 `0x68`，需在 `imu_mpu6050/config/mpu6050_params.yaml` 中修改
 
