@@ -11,13 +11,14 @@
 - **`tbot_description`**: 机器人模型。包含 URDF 定义及 RViz 可视化配置。
 - **`imu_mpu6050`**: IMU 传感器驱动。读取 MPU6050 加速度计和陀螺仪数据，发布 `sensor_msgs/Imu` 消息。
 - **`robot_localization_config`**: EKF 融合定位配置。融合轮式里程计和 IMU 数据，输出更精确的 `odom_fused` 定位信息。
+- **`tbot_navigation`**: Nav2 自动导航配置包。加载已保存地图，通过 AMCL 定位，使用 Nav2 规划路径并输出 `/cmd_vel` 控制底盘。
 
 ## 2. 快速运行指南
 
 在运行任何节点前，请确保已编译并加载环境：
 
 ```bash
-cd ~/Desktop/robot_move/my_base_learn
+# 进入包含 src 目录的 ROS 2 工作空间根目录
 source /opt/ros/jazzy/setup.bash
 colcon build
 source install/setup.bash
@@ -84,7 +85,7 @@ source install/setup.bash
 
 1. **启动 RViz 查看模型**：
    ```bash
-   ros2 launch tbot_description display.launch.py
+   ros2 launch tbot_description display.launch
    ```
 
 ### D. 雷达建图（2D SLAM）
@@ -99,7 +100,7 @@ source install/setup.bash
    ros2 run my_base my_base
    ```
    ```bash
-   ros2 launch tbot_description display.launch.py
+   ros2 launch tbot_description display.launch
    ```
    ```bash
    ros2 launch lslidar_driver lsn10p_launch.py
@@ -119,7 +120,7 @@ source install/setup.bash
    ros2 launch robot_localization_config localization_launch.py
    ```
    ```bash
-   ros2 launch tbot_description display.launch.py
+   ros2 launch tbot_description display.launch
    ```
    ```bash
    ros2 launch lslidar_driver lsn10p_launch.py
@@ -155,6 +156,84 @@ source install/setup.bash
    ```bash
    mkdir -p ~/Desktop/robot_move/maps
    ros2 run nav2_map_server map_saver_cli -f ~/Desktop/robot_move/maps/my_map
+   ```
+
+### E. Nav2 + AMCL 自动导航
+
+本项目已新增 `tbot_navigation` 包，用于在已有地图上运行 Nav2 自动导航。推荐流程是：
+
+```text
+先用 slam_toolbox 建图并保存地图
+停止 slam_toolbox
+再启动 map_server + AMCL + Nav2
+```
+
+导航阶段不要同时启动 `slam_toolbox`，因为 `slam_toolbox` 和 AMCL 都会发布 `map -> odom`，同时运行会造成 TF 冲突。
+
+1. **安装 Nav2 依赖**：
+   ```bash
+   sudo apt update
+   sudo apt install ros-$ROS_DISTRO-navigation2 ros-$ROS_DISTRO-nav2-bringup
+   sudo apt install ros-$ROS_DISTRO-robot-localization ros-$ROS_DISTRO-nav2-map-server
+   ```
+
+2. **编译导航包**：
+   ```bash
+   colcon build --packages-select tbot_navigation
+   source install/setup.bash
+   ```
+
+3. **一键启动实车导航**：
+   ```bash
+   ros2 launch tbot_navigation bringup_navigation.launch.py \
+     map:=$HOME/Desktop/robot_move/maps/my_map.yaml
+   ```
+
+   该启动文件会启动：
+   - `my_base`，并自动设置 `pub_odom_tf:=false`
+   - `robot_localization` EKF，发布 `odom -> base_footprint`
+   - `robot_state_publisher`，发布机器人模型 TF
+   - `lslidar_driver`，发布 `/scan`
+   - `map_server + AMCL + Nav2`
+
+4. **如果底层节点已手动启动，只启动 Nav2 + AMCL**：
+   ```bash
+   ros2 launch tbot_navigation nav2_amcl_launch.py \
+     map:=$HOME/Desktop/robot_move/maps/my_map.yaml
+   ```
+
+5. **RViz 操作**：
+   ```bash
+   rviz2
+   ```
+   - Fixed Frame 设置为 `map`
+   - 使用 `2D Pose Estimate` 设置机器人初始位置
+   - 确认 `/scan` 和地图墙体基本重合
+   - 使用 `Nav2 Goal` 发送目标点
+
+6. **导航阶段 TF 关系**：
+   ```text
+   map -> odom                         AMCL 发布
+   odom -> base_footprint              EKF 发布
+   base_footprint -> base_link -> laser  URDF 发布
+   ```
+
+7. **常用检查命令**：
+   ```bash
+   ros2 topic echo /scan --once
+   ros2 topic echo /odom_fused --once
+   ros2 topic echo /cmd_vel
+   ros2 run tf2_ros tf2_echo map odom
+   ros2 run tf2_ros tf2_echo odom base_footprint
+   ros2 run tf2_ros tf2_echo base_footprint laser
+   ```
+
+8. **详细技术文档**：
+
+   Nav2 + AMCL 的参数解释、启动流程、调试方法和常见问题见：
+
+   ```text
+   src/tbot_navigation/docs/NAV2_AMCL_TECHNICAL_GUIDE.md
    ```
 
 ## 3. 硬件配置
@@ -234,5 +313,6 @@ ros2 run my_base fan_keyboard
 - 若发送后风机无反应，需要继续确认这一路 USB 串口是否最终进入 STM32 的 `USART3` 协议处理逻辑
 - 树莓派与 STM32 通信时应保证供电稳定，通信链路正常
 - 使用 EKF 融合时，务必先禁用 `my_base` 的 TF 发布（`pub_odom_tf:=false`），避免 TF 冲突
+- 使用 Nav2 + AMCL 导航时，务必停止 `slam_toolbox`，避免 `map -> odom` TF 冲突
 - MPU6050 的 I2C 地址若不为 `0x68`，需在 `imu_mpu6050/config/mpu6050_params.yaml` 中修改
 
