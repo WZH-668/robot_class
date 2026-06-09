@@ -92,6 +92,11 @@ turn_on_robot::turn_on_robot():rclcpp::Node ("wheeltec_robot")
      odom_publisher= create_publisher<nav_msgs::msg::Odometry>("odom",2);
      imu_publisher = create_publisher<sensor_msgs::msg::Imu>("imu/data_raw", 2);
      battery_publisher = create_publisher<std_msgs::msg::Float32>("battery_voltage", 2);
+     
+     // 初始化反向停止定时器 (10ms周期检查)
+     brake_timer_ = create_wall_timer(std::chrono::milliseconds(10),
+         std::bind(&turn_on_robot::Brake_Timer_Callback, this));
+     last_cmd_time_ = this->now();
       try
      { 
 
@@ -168,9 +173,39 @@ void turn_on_robot::Cmd_Vel_Callback(const geometry_msgs::msg::Twist::SharedPtr 
     twist_aux->linear.x, twist_aux->linear.y, twist_aux->linear.z,
     twist_aux->angular.x, twist_aux->angular.y, twist_aux->angular.z);
 
+  last_cmd_time_ = this->now();
+  
+  // 如果之前处于制动状态，重置它
+  if (brake_active_) {
+    brake_active_ = false;
+    brake_phase_ = 0;
+    zero_cmd_received_ = false;
+  }
+
   Cmd_Linear_X = twist_aux->linear.x;
   Cmd_Linear_Y = twist_aux->linear.y;
   Cmd_Angular_Z = twist_aux->angular.z;
+
+  // 判断当前命令是否为零速度
+  bool is_zero = (Cmd_Linear_X == 0.0f && Cmd_Linear_Y == 0.0f && Cmd_Angular_Z == 0.0f);
+  
+  if (is_zero) {
+    // 收到零速度命令
+    if (!zero_cmd_received_ && have_last_valid_cmd_) {
+      // 第一次收到零速度，记录时间
+      zero_cmd_received_ = true;
+      zero_cmd_time_ = this->now();
+      RCLCPP_INFO(this->get_logger(), "[brake] zero cmd received, waiting...");
+    }
+  } else {
+    // 收到非零速度命令
+    zero_cmd_received_ = false;
+    // 保存最后有效的速度命令
+    last_valid_linear_x_ = Cmd_Linear_X;
+    last_valid_linear_y_ = Cmd_Linear_Y;
+    last_valid_angular_z_ = Cmd_Angular_Z;
+    have_last_valid_cmd_ = true;
+  }
 
   Send_Control_Frame(Cmd_Linear_X, Cmd_Linear_Y, Cmd_Angular_Z);
 }
@@ -180,6 +215,56 @@ void turn_on_robot::Fan_Cmd_Callback(const std_msgs::msg::Bool::SharedPtr msg)
   Fan_State = msg->data;
 
   Send_Control_Frame(Cmd_Linear_X, Cmd_Linear_Y, Cmd_Angular_Z);
+}
+
+void turn_on_robot::Brake_Timer_Callback()
+{
+  // 如果正在制动过程中
+  if (brake_active_) {
+    rclcpp::Duration elapsed = this->now() - brake_start_time_;
+    
+    if (brake_phase_ == 1) {
+      // 反向制动阶段
+      if (elapsed.seconds() >= BRAKE_REVERSE_DURATION) {
+        brake_phase_ = 2;
+        brake_start_time_ = this->now();
+        // 发送停止命令
+        RCLCPP_INFO(this->get_logger(), "[brake] stop");
+        Send_Control_Frame(0.0f, 0.0f, 0.0f);
+      }
+    } else if (brake_phase_ == 2) {
+      // 停止阶段
+      if (elapsed.seconds() >= BRAKE_STOP_DURATION) {
+        brake_active_ = false;
+        brake_phase_ = 0;
+        have_last_valid_cmd_ = false;
+        zero_cmd_received_ = false;
+      }
+    }
+    return;
+  }
+  
+  // 检查零速度命令是否持续足够时间
+  if (zero_cmd_received_ && have_last_valid_cmd_) {
+    rclcpp::Duration elapsed = this->now() - zero_cmd_time_;
+    if (elapsed.seconds() >= ZERO_CMD_DELAY) {
+      // 触发反向制动
+      brake_active_ = true;
+      brake_phase_ = 1;
+      brake_start_time_ = this->now();
+      zero_cmd_received_ = false;
+      
+      // 发送反向速度 (使用保存的最后有效命令)
+      float reverse_x = last_valid_linear_x_ * BRAKE_REVERSE_SCALE;
+      float reverse_y = last_valid_linear_y_ * BRAKE_REVERSE_SCALE;
+      float reverse_z = last_valid_angular_z_ * BRAKE_REVERSE_SCALE;
+      
+      RCLCPP_INFO(this->get_logger(), "[brake] reverse: last_x=%.3f last_y=%.3f last_z=%.3f -> reverse_x=%.3f reverse_y=%.3f reverse_z=%.3f",
+                  last_valid_linear_x_, last_valid_linear_y_, last_valid_angular_z_,
+                  reverse_x, reverse_y, reverse_z);
+      Send_Control_Frame(reverse_x, reverse_y, reverse_z);
+    }
+  }
 }
 
 void turn_on_robot::Publish_Odom()

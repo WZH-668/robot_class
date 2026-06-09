@@ -114,6 +114,24 @@ class turn_on_robot : public rclcpp::Node
     float Cmd_Linear_Y = 0;
     float Cmd_Angular_Z = 0;
     bool pub_odom_tf = true;
+    // 反向停止功能相关变量
+    rclcpp::Time last_cmd_time_{0, 0, RCL_ROS_TIME};
+    rclcpp::TimerBase::SharedPtr brake_timer_;
+    bool brake_active_ = false;
+    int brake_phase_ = 0; // 0: 无, 1: 反向制动中, 2: 停止中
+    rclcpp::Time brake_start_time_{0, 0, RCL_ROS_TIME};
+    // 保存最后有效的速度命令（用于反向制动）
+    float last_valid_linear_x_ = 0.0f;
+    float last_valid_linear_y_ = 0.0f;
+    float last_valid_angular_z_ = 0.0f;
+    bool have_last_valid_cmd_ = false;
+    // 零速度检测相关
+    bool zero_cmd_received_ = false;
+    rclcpp::Time zero_cmd_time_{0, 0, RCL_ROS_TIME};
+    const double BRAKE_REVERSE_DURATION = 0.1;  // 反向时间 100ms
+    const double BRAKE_STOP_DURATION = 0.1;      // 停止时间 100ms
+    const double ZERO_CMD_DELAY = 0.1;            // 收到零速度后等待时间再制动
+    const float BRAKE_REVERSE_SCALE = -10.0f;      // 反向系数
     uint64_t rx_frame_attempts_ = 0;
     uint64_t rx_frame_success_ = 0;
     uint64_t rx_tail_error_ = 0;
@@ -123,6 +141,7 @@ class turn_on_robot : public rclcpp::Node
 
     void Fan_Cmd_Callback(const std_msgs::msg::Bool::SharedPtr msg);
     void Send_Control_Frame(float linear_x, float linear_y, float angular_z);
+    void Brake_Timer_Callback(); // 反向停止定时器回调
  
 
     };
